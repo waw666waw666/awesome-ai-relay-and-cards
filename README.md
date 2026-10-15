@@ -1,7 +1,7 @@
 # 🚀 AI 发卡比价与 API 中转站双重精选指南 (2026)
 
 > **评测基准**：2026.10 自动化采样 ｜ **审计机制**：3×AI 子智能体独立加权 ｜ **原则**：零赞助 · 无推广 · 全客观  
-> **快速直达**：[💳 卡网比价榜](#cards-ranking) ｜ [⚡ API 中转站榜](#relay-ranking) ｜ [⚖️ 免责声明](#disclaimer-section) ｜ [🔬 打分标准](#scoring-rules) ｜ [📖 完整条款 (DISCLAIMER.md)](./DISCLAIMER.md)
+> **快速直达**：[💳 卡网比价榜](#cards-ranking) ｜ [⚡ API 中转站榜](#relay-ranking) ｜ [📊 全量中转站评测 (API_RELAY.md)](./API_RELAY.md) ｜ [⚖️ 免责声明](#disclaimer-section) ｜ [🔬 打分标准](#scoring-rules) ｜ [📖 完整条款 (DISCLAIMER.md)](./DISCLAIMER.md)
 
 ---
 
@@ -47,6 +47,9 @@
 
 <a id="relay-ranking" name="relay-ranking"></a>
 ## ⚡ 二、AI API 中转站独立榜单
+
+> 📊 **全量中转站评测独立文档**：已将全量 22 家主流 API 中转站深度测试、真假官转鉴别与实时倍率单独整理为专文：  
+> 👉 **[`API_RELAY.md` · AI API 中转站全量评测指南 ➔](./API_RELAY.md)**
 
 > **适用场景**：开发者、企业与高频 API 用户，寻找靠谱 API 中转、防范模型掺假、监控延迟可用率、折算倍率。
 
