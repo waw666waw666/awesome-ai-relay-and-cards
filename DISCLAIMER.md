@@ -1,4 +1,4 @@
-# ⚖️ 免责声明与使用条款 (DISCLAIMER & TERMS OF USE)
+# 免责声明与使用条款 (DISCLAIMER & TERMS OF USE)
 
 > **生效日期**：2026年10月  
 > **适用范围**：本声明适用于由 `waw666waw666` 发起并维护的开源项目 [awesome-ai-relay-and-cards](https://github.com/waw666waw666/awesome-ai-relay-and-cards)（以下统称“本项目”）包含的所有文字、表格、链接、算法评分及衍生内容。  
