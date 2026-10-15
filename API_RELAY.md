@@ -2,7 +2,7 @@
 
 > 导航：[返回主页](./README.md) ｜ [卡网完整榜](./CARDS.md) ｜ [打分标准细则](./SCORING.md) ｜ [免责声明条款](./DISCLAIMER.md)
 
-本榜单专为开发者、企业与高频 API 用户整理，通过自动化网络探针与多智能体独立审计，全量收录 23 家主流 API 中转服务商，涵盖模型纯度检测、官转/逆向鉴别、实时可用率测速及倍率折算。
+本榜单专为开发者、企业与高频 API 用户整理，通过自动化网络探针与多智能体独立审计，全量收录 24 家主流 API 中转服务商，涵盖模型纯度检测、官转/逆向鉴别、实时可用率测速及倍率折算。
 
 ---
 
@@ -26,17 +26,18 @@
 | **7** | **84.8** | **禾维 AI** | [https://www.hvoyai.com/](https://www.hvoyai.com/) | 65 / 100 / 90 | 配套在线 API 鉴定器，输入 Key 与端点可实测 Claude/GPT 真假。 |
 | **8** | **84.0** | **MODELOC** | [https://modeloc.com/relays](https://modeloc.com/relays) | 75 / 90 / 90 | 主打大模型原始一致性检测，收录中转目录并提供掺水审计与社区用户打分。 |
 | **9** | **83.5** | **Veridrop (真伪榜)** | [https://veridrop.org/](https://veridrop.org/) | 80 / 90 / 80 | 业内权威真伪榜，站长授权 Key 持续检测模型纯度。 |
-| **10** | **83.5** | **chatgpt.top** | [https://chatgpt.top/](https://chatgpt.top/) | 80 / 90 / 80 | 专为 Claude Code / Cursor / Codex 整理，全站无推广返利。 |
-| **11** | **83.0** | **awesome-ai-api-proxy** | [https://howardpen9.github.io/awesome-ai-api-proxy/](https://howardpen9.github.io/awesome-ai-api-proxy/) | 85 / 75 / 90 | GitHub 开源项目，面向 AI Agent 的纯净价格观测端点。 |
-| **12** | **81.8** | **Help AIO** | [https://www.helpaio.com/](https://www.helpaio.com/) | 75 / 90 / 80 | 自费实测购买，7×24 真实调用探针，公开口径杜绝作弊。 |
-| **13** | **81.8** | **白嫖中转评测** | [https://baipiao.org/relay/](https://baipiao.org/relay/) | 65 / 90 / 85 | 14+ 站点真实请求测评，记录实际扣费与成功率。 |
-| **14** | **81.2** | **OkkMax** | [https://www.okkmax.com/](https://www.okkmax.com/) | 60 / 90 / 85 | 提供纯度检测、上下文长度测试与“模型智商榜”。 |
-| **15** | **80.2** | **ZZZNav** | [https://zzznav.com/](https://zzznav.com/) | 65 / 90 / 85 | 18 个模型官方牌价与 44 家中转倍率逐项折算。 |
-| **16** | **80.2** | **API选** | [https://www.apixuan.com/](https://www.apixuan.com/) | 65 / 90 / 85 | 新手友好，提供精选推荐与常见客户端配置教程。 |
-| **17** | **79.5** | **AI API 公益站** | [https://bubblevv.github.io/ai-api-gongyi-nav/](https://bubblevv.github.io/ai-api-gongyi-nav/) | 50 / 90 / 90 | GitHub 开源公益导航，收集免费额度与签到中转。 |
-| **18** | **78.2** | **APIvs** | [https://apivs.si/](https://apivs.si/) | 65 / 90 / 85 | 基于真实请求测试可用率、首字延迟与协议兼容性。 |
-| **19** | **76.5** | **纯度AI** | [https://chunduai.com/](https://chunduai.com/) | 70 / 80 / 80 | 整合编程工具教程，同步 Veridrop 检测榜单。 |
-| **20** | **76.5** | **API搜** | [https://www.apisou.com/](https://www.apisou.com/) | 65 / 90 / 85 | 140+ 站点目录，按官转、开源、逆向标签分类。 |
+| **10** | **83.5** | **GetCheapAI** | [https://www.getcheapai.com/zh-cn](https://www.getcheapai.com/zh-cn) | 65 / 100 / 90 | 覆盖 60+ 中转与 520+ 模型，提供 90 分钟可用性与延迟探针，支持多币种折扣换算。 |
+| **11** | **83.5** | **chatgpt.top** | [https://chatgpt.top/](https://chatgpt.top/) | 80 / 90 / 80 | 专为 Claude Code / Cursor / Codex 整理，全站无推广返利。 |
+| **12** | **83.0** | **awesome-ai-api-proxy** | [https://howardpen9.github.io/awesome-ai-api-proxy/](https://howardpen9.github.io/awesome-ai-api-proxy/) | 85 / 75 / 90 | GitHub 开源项目，面向 AI Agent 的纯净价格观测端点。 |
+| **13** | **81.8** | **Help AIO** | [https://www.helpaio.com/](https://www.helpaio.com/) | 75 / 90 / 80 | 自费实测购买，7×24 真实调用探针，公开口径杜绝作弊。 |
+| **14** | **81.8** | **白嫖中转评测** | [https://baipiao.org/relay/](https://baipiao.org/relay/) | 65 / 90 / 85 | 14+ 站点真实请求测评，记录实际扣费与成功率。 |
+| **15** | **81.2** | **OkkMax** | [https://www.okkmax.com/](https://www.okkmax.com/) | 60 / 90 / 85 | 提供纯度检测、上下文长度测试与“模型智商榜”。 |
+| **16** | **80.2** | **ZZZNav** | [https://zzznav.com/](https://zzznav.com/) | 65 / 90 / 85 | 18 个模型官方牌价与 44 家中转倍率逐项折算。 |
+| **17** | **80.2** | **API选** | [https://www.apixuan.com/](https://www.apixuan.com/) | 65 / 90 / 85 | 新手友好，提供精选推荐与常见客户端配置教程。 |
+| **18** | **79.5** | **AI API 公益站** | [https://bubblevv.github.io/ai-api-gongyi-nav/](https://bubblevv.github.io/ai-api-gongyi-nav/) | 50 / 90 / 90 | GitHub 开源公益导航，收集免费额度与签到中转。 |
+| **19** | **78.2** | **APIvs** | [https://apivs.si/](https://apivs.si/) | 65 / 90 / 85 | 基于真实请求测试可用率、首字延迟与协议兼容性。 |
+| **20** | **76.5** | **纯度AI** | [https://chunduai.com/](https://chunduai.com/) | 70 / 80 / 80 | 整合编程工具教程，同步 Veridrop 检测榜单。 |
+| **21** | **76.5** | **API搜** | [https://www.apisou.com/](https://www.apisou.com/) | 65 / 90 / 85 | 140+ 站点目录，按官转、开源、逆向标签分类。 |
 
 ---
 
@@ -44,9 +45,9 @@
 
 | 排名 | 得分 | 平台名称 | 官网链接 | 简评 |
 | :---: | :---: | :--- | :--- | :--- |
-| **21** | **74.8** | **AI Relay Check** | [https://airelaycheck.com/](https://airelaycheck.com/) | 7 家站点深度对比，提供逐模型扣费证据。 |
-| **22** | **74.2** | **aiproxy.best** | [https://aiproxy.best/](https://aiproxy.best/) | 基础推荐对比，界面简洁。 |
-| **23** | **71.2** | **中转站竞技场** | [https://www.aiapipk.com/](https://www.aiapipk.com/) | 纯文本展示部分常见站点倍率，维护较少。 |
+| **22** | **74.8** | **AI Relay Check** | [https://airelaycheck.com/](https://airelaycheck.com/) | 7 家站点深度对比，提供逐模型扣费证据。 |
+| **23** | **74.2** | **aiproxy.best** | [https://aiproxy.best/](https://aiproxy.best/) | 基础推荐对比，界面简洁。 |
+| **24** | **71.2** | **中转站竞技场** | [https://www.aiapipk.com/](https://www.aiapipk.com/) | 纯文本展示部分常见站点倍率，维护较少。 |
 
 ---
 
