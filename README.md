@@ -121,5 +121,5 @@
 ## 💬 四、社区勘误、下架与免责声明
 
 - **数据勘误**：若发现站点域名变更或状态失效，欢迎在 [Issues](https://github.com/waw666waw666/awesome-ai-relay-and-cards/issues) 提交反馈。
-- **72 小时快速下架**：站点运营方如不希望被收录，请按照 [DISCLAIMER.md 第八条](./DISCLAIMER.md#八异议沟通与侵权移除流程-notice-and-takedown) 提交 Issue 申请，核实后将于 72 小时内从本项目彻底移除。
+- **无条件移除流程**：站点运营方如不希望被收录，请提 Issue 申请，核实后将尽快无条件彻底移除，详见 [DISCLAIMER.md 第八条](./DISCLAIMER.md#八异议沟通与侵权移除流程-notice-and-takedown)。
 - **免责条款**：完整法律声明与风险须知见 [DISCLAIMER.md ➔](./DISCLAIMER.md)。
