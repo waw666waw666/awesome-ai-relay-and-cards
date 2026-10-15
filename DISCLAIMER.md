@@ -1,6 +1,6 @@
-# 免责声明与使用条款 (DISCLAIMER & TERMS OF USE)
+# ⚖️ 免责声明与使用条款 (DISCLAIMER & TERMS OF USE)
 
-> [返回项目总览 (README.md)](./README.md) ｜ [卡网比价榜 (CARDS.md)](./CARDS.md) ｜ [API 中转站榜 (RELAY.md)](./RELAY.md) ｜ [打分规则 (SCORING.md)](./SCORING.md)
+> 快速导航：[🏠 项目总览 (README.md)](./README.md) ｜ [💳 卡网比价榜 (CARDS.md)](./CARDS.md) ｜ [⚡ API 中转站榜 (RELAY.md)](./RELAY.md) ｜ [🔬 打分标准 (SCORING.md)](./SCORING.md)
 
 > **生效日期**：2026年10月  
 > **适用范围**：本声明适用于由 `waw666waw666` 发起并维护的开源项目 [awesome-ai-relay-and-cards](https://github.com/waw666waw666/awesome-ai-relay-and-cards)（以下统称“本项目”）包含的所有文字、表格、链接、算法评分及衍生内容。  
