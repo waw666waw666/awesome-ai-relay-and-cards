@@ -1,7 +1,7 @@
 # 🚀 AI 发卡比价与 API 中转站双重精选指南 (2026)
 
 > **评测基准**：2026.10 自动化采样 ｜ **审计机制**：3×AI 子智能体独立加权 ｜ **原则**：零赞助 · 无推广 · 全客观  
-> **快速直达**：[💳 卡网比价榜](#cards-ranking) ｜ [⚡ API 中转站榜](#relay-ranking) ｜ [📊 全量中转站评测 (API_RELAY.md)](./API_RELAY.md) ｜ [🔬 打分标准](#scoring-rules) ｜ [⚖️ 免责声明与条款 (DISCLAIMER.md)](./DISCLAIMER.md)
+> **直达**：[💳 卡网榜](#cards-ranking) ｜ [⚡ 中转站榜](#relay-ranking) ｜ [📊 全量中转 (API_RELAY.md)](./API_RELAY.md) ｜ [🔬 评分规则](#scoring-rules) ｜ [⚖️ 免责声明 (DISCLAIMER.md)](./DISCLAIMER.md)
 
 ---
 
@@ -48,8 +48,7 @@
 <a id="relay-ranking" name="relay-ranking"></a>
 ## ⚡ 二、AI API 中转站独立榜单
 
-> 📊 **全量中转站评测独立文档**：已将全量 22 家主流 API 中转站深度测试、真假官转鉴别与实时倍率单独整理为专文：  
-> 👉 **[`API_RELAY.md` · AI API 中转站全量评测指南 ➔](./API_RELAY.md)**
+> 📊 全量 22 家中转站深度评测见 [API_RELAY.md ➔](./API_RELAY.md)
 
 > **适用场景**：开发者、企业与高频 API 用户，寻找靠谱 API 中转、防范模型掺假、监控延迟可用率、折算倍率。
 
@@ -123,5 +122,4 @@
 
 - **数据勘误**：若发现站点域名变更或状态失效，欢迎在 [Issues](https://github.com/waw666waw666/awesome-ai-relay-and-cards/issues) 提交反馈。
 - **72 小时快速下架**：站点运营方如不希望被收录，请按照 [DISCLAIMER.md 第八条](./DISCLAIMER.md#八异议沟通与侵权移除流程-notice-and-takedown) 提交 Issue 申请，核实后将于 72 小时内从本项目彻底移除。
-- **法律级免责条款**：涵盖纯 AI 算法主观性、第三方交易资金风险自负、服务条款冲突及商标合理引用声明，请直接参阅完整文档：  
-  👉 **[⚖️ 免责声明与使用条款 (DISCLAIMER.md)](./DISCLAIMER.md)**
+- **免责条款**：完整法律声明与风险须知见 [DISCLAIMER.md ➔](./DISCLAIMER.md)。
