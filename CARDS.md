@@ -1,6 +1,6 @@
 # AI 发卡网与订阅聚合比价完整榜单 (2026)
 
-> 导航：[主页 (README.md)](./README.md) ｜ [中转站榜 (API_RELAY.md)](./API_RELAY.md) ｜ [评分标准 (SCORING.md)](./SCORING.md) ｜ [免责声明 (DISCLAIMER.md)](./DISCLAIMER.md)
+> 导航：[返回主页](./README.md) ｜ [中转站全量榜](./API_RELAY.md) ｜ [打分标准细则](./SCORING.md) ｜ [免责声明条款](./DISCLAIMER.md)
 
 本榜单主要面向 ChatGPT Plus/Team、Claude Pro、Gemini 订阅、成品账号及兑换码比价，按多智能体综合评测得分梯队划分。
 
@@ -46,5 +46,5 @@
 ## 说明与别名合并
 
 - **别名合并项**：`priceai.io` 合并至 `priceai.cc`；`airadar.ink` 合并至 `airadar.vip`；`aiprobe.top` 合并至 `aiprobe.yumeapi.cn`。
-- **评测标准**：各维度打分判据请参阅 [SCORING.md](./SCORING.md)。
-- **风险提示**：第三方发卡网属于第三方自建服务，请务必小额按需购买，切勿沉淀大额资金，详见 [DISCLAIMER.md](./DISCLAIMER.md)。
+- **评测标准**：各维度打分判据请参阅 [打分标准细则](./SCORING.md)。
+- **风险提示**：第三方发卡网属于第三方自建服务，请务必小额按需购买，切勿沉淀大额资金，详见 [免责声明与使用条款](./DISCLAIMER.md)。

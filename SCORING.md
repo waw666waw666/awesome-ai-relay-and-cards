@@ -1,6 +1,6 @@
 # 多智能体独立打分体系与评测标准
 
-> 导航：[主页 (README.md)](./README.md) ｜ [卡网榜 (CARDS.md)](./CARDS.md) ｜ [中转站榜 (API_RELAY.md)](./API_RELAY.md) ｜ [免责声明 (DISCLAIMER.md)](./DISCLAIMER.md)
+> 导航：[返回主页](./README.md) ｜ [卡网完整榜](./CARDS.md) ｜ [中转站全量榜](./API_RELAY.md) ｜ [免责声明条款](./DISCLAIMER.md)
 
 本项目的所有评分与排名完全由自动化网络探针与 3 个独立职能的 AI 子智能体交叉审计生成，满分 100 分。全程无人工干预，零商业赞助。
 

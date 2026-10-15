@@ -1,6 +1,6 @@
 # AI API 中转站全量评测指南 (2026)
 
-> 导航：[主页 (README.md)](./README.md) ｜ [卡网榜 (CARDS.md)](./CARDS.md) ｜ [评分标准 (SCORING.md)](./SCORING.md) ｜ [免责声明 (DISCLAIMER.md)](./DISCLAIMER.md)
+> 导航：[返回主页](./README.md) ｜ [卡网完整榜](./CARDS.md) ｜ [打分标准细则](./SCORING.md) ｜ [免责声明条款](./DISCLAIMER.md)
 
 本榜单专为开发者、企业与高频 API 用户整理，通过自动化网络探针与多智能体独立审计，全量收录 22 家主流 API 中转服务商，涵盖模型纯度检测、官转/逆向鉴别、实时可用率测速及倍率折算。
 
@@ -53,4 +53,4 @@
 
 - **别名合并**：`veridrop.app` 与 `apihonest.com` 合并至 `veridrop.org`；`www.hovy.ai` 合并至 `www.hvoyai.com`；`grokcode.cn/api-transit` 合并至 `grokcode.cn`。
 - **真假官转鉴别要点**：调用特定隐藏 System Prompt、长上下文 Token 扣费比例、特定 Emoji 流式输出特征等。
-- **资金安全警示**：第三方中转站自建服务随时存在封号跑路风险，请务必保持“小额测试、按需充值、随用随走”原则。完整免责条款请参阅 [DISCLAIMER.md](./DISCLAIMER.md)。
+- **资金安全警示**：第三方中转站自建服务随时存在封号跑路风险，请务必保持“小额测试、按需充值、随用随走”原则。完整免责条款请参阅 [免责声明与使用条款](./DISCLAIMER.md)。
