@@ -1,6 +1,6 @@
 # ⚡ AI API 中转站全量评测指南 (2026)
 
-> **导航**：[🏠 主页 (README.md)](./README.md) ｜ [💳 卡网榜](./README.md#cards-ranking) ｜ [🔬 评分规则](./README.md#scoring-rules) ｜ [⚖️ 免责声明 (DISCLAIMER.md)](./DISCLAIMER.md)
+> **导航**：[🏠 主页 (README.md)](./README.md) ｜ [💳 卡网榜 (CARDS.md)](./CARDS.md) ｜ [🔬 评分标准 (SCORING.md)](./SCORING.md) ｜ [⚖️ 免责声明 (DISCLAIMER.md)](./DISCLAIMER.md)
 
 本榜单专为开发者、企业与高频 API 用户整理，通过自动化网络探针与多智能体独立审计，全量收录 22 家主流 API 中转服务商，涵盖模型纯度检测、官转/逆向鉴别、实时可用率测速及倍率折算。
 
