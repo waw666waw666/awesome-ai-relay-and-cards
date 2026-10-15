@@ -1,7 +1,7 @@
 # 🚀 AI 发卡比价与 API 中转站双重精选指南 (2026)
 
 > **评测基准**：2026.10 自动化采样 ｜ **审计机制**：3×AI 子智能体独立加权 ｜ **原则**：零赞助 · 无推广 · 全客观  
-> **快速直达**：[💳 卡网比价榜](#cards-ranking) ｜ [⚡ API 中转站榜](#relay-ranking) ｜ [📊 全量中转站评测 (API_RELAY.md)](./API_RELAY.md) ｜ [⚖️ 免责声明](#disclaimer-section) ｜ [🔬 打分标准](#scoring-rules) ｜ [📖 完整条款 (DISCLAIMER.md)](./DISCLAIMER.md)
+> **快速直达**：[💳 卡网比价榜](#cards-ranking) ｜ [⚡ API 中转站榜](#relay-ranking) ｜ [📊 全量中转站评测 (API_RELAY.md)](./API_RELAY.md) ｜ [🔬 打分标准](#scoring-rules) ｜ [⚖️ 免责声明与条款 (DISCLAIMER.md)](./DISCLAIMER.md)
 
 ---
 
@@ -94,19 +94,8 @@
 
 ---
 
-<a id="disclaimer-section" name="disclaimer-section"></a>
-## ⚖️ 三、重要免责声明与评测原则
-
-> **完整法律条款**：涵盖第三方交易风险自负、服务条款冲突、商标权属及 72 小时下架流程，详见 [DISCLAIMER.md](./DISCLAIMER.md)。
-
-1. **全自主算法评判**：探针脚本与 AI 子智能体交叉分析生成，无人工商业干预，零赞助，不设付费推广位。
-2. **主观实验与时效性**：本榜单为特定采样节点的技术快照，不构成消费、充值或商业投资建议。第三方站点更新频繁，不作稳定性担保。
-3. **资金安全严正警示**：第三方服务跑路与封号风险极高，务必遵循**“小额测试、按需充值、随用随走、切勿大额沉淀资金”**原则。因使用第三方服务导致的任何纠纷或财产损失，本项目概不负责。
-
----
-
 <a id="scoring-rules" name="scoring-rules"></a>
-## 🔬 四、多智能体打分体系与权重公开
+## 🔬 三、多智能体打分体系与权重公开
 
 ```
 综合得分 = 中立风控分 (35%) + 数据功能分 (35%) + 体验直连分 (30%)
@@ -130,7 +119,9 @@
 ---
 
 <a id="community-feedback" name="community-feedback"></a>
-## 💬 五、社区勘误与下架申请
+## 💬 四、社区勘误、下架与免责声明
 
 - **数据勘误**：若发现站点域名变更或状态失效，欢迎在 [Issues](https://github.com/waw666waw666/awesome-ai-relay-and-cards/issues) 提交反馈。
-- **72 小时下架申请**：站点运营方如不希望被收录，请依 [DISCLAIMER.md](./DISCLAIMER.md) 第八条提交工单，核实后将于 72 小时内彻底移除。
+- **72 小时快速下架**：站点运营方如不希望被收录，请按照 [DISCLAIMER.md 第八条](./DISCLAIMER.md#八异议沟通与侵权移除流程-notice-and-takedown) 提交 Issue 申请，核实后将于 72 小时内从本项目彻底移除。
+- **法律级免责条款**：涵盖纯 AI 算法主观性、第三方交易资金风险自负、服务条款冲突及商标合理引用声明，请直接参阅完整文档：  
+  👉 **[⚖️ 免责声明与使用条款 (DISCLAIMER.md)](./DISCLAIMER.md)**
