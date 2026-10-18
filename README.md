@@ -105,26 +105,62 @@
 
 ## Agent 维护技能与自动化工具
 
-本项目内置开箱即用的 AI 智能体技能规范与轻量化纯 Python 校验工具，确保价格检索与外链状态不依赖聚合站过期货架缓存：
+本项目不仅是一份静态指南，还内置了开箱即用的 AI 智能体专属技能规范与轻量化纯 Python 工具链，实现了“数据资产全量内置 + 实时真价穿透验真 + 自动化外链巡检”：
 
-- **专属 Agent Skill**: [`.agents/skills/card-and-relay-tracker/SKILL.md`](./.agents/skills/card-and-relay-tracker/SKILL.md)
-  - 规范 AI 智能体在面对比价和找号请求时的执行流程：严禁直信聚合站缓存标价，强制两段式穿透到终端发卡落地页。
-  - **规格纯度硬阻断**：严格区分【成品号】与【代充/代认证】服务，自动加载负向词库对“代认证、自备账号、单认证”实施一票否决。
-  - **7 维机读判定门禁矩阵**: [`anti_traps.md`](./.agents/skills/card-and-relay-tracker/references/anti_traps.md)（涵盖规格纯度、价格真伪、现货库存、邮箱质保、模型纯度、倍率膨胀换算与长文本截断等判定动作）。
-  - **标准化靶标与 SKU 定义池**: [`targets.json`](./.agents/skills/card-and-relay-tracker/references/targets.json)。
-- **落地页真价穿透验真脚本**: [`scripts/verify_terminal.py`](./scripts/verify_terminal.py)
-  - 纯 Python 标准库实现，支持自动嗅探发卡网开放 REST API / DOM 邻近特征窗口，精准识别 WAF 防火墙挑战盾，提取实时结算价格、真实库存与周期折合月单价。
-  - 使用示例：
-    ```bash
-    # 穿透验真指定 SKU，并强制过滤代认证干扰
-    python scripts/verify_terminal.py "https://buyai.dev/" --sku "Muse" --require-tags "成品" --exclude-tags "代认证,自备" --json
-    ```
-- **全量外链探活与换绑追踪脚本**: [`scripts/check_links.py`](./scripts/check_links.py)
-  - 并发执行 HEAD 探测 + GET 1KB 范围平滑回退，支持宽容 SSL 证书环境，自动追踪跨域名 301/302 重定向换绑与下线预警。
-  - 使用示例：
-    ```bash
-    python scripts/check_links.py --workers 10
-    ```
+### 一、内置全量数字资产（40 家站点全覆盖）
+- 技能数据核心 [`targets.json`](./.agents/skills/card-and-relay-tracker/references/targets.json) **已完整内置收录本项目全部 40 家站点资产**：
+  - **16 家发卡聚合比价站**：T0（PriceAI、就爱比）、T1（OpenPrice、水獭比价、AIFeeRadar 等 6 家）及 T2 备用目录；
+  - **24 家 API 中转评测站**：T0（RouterHubs、TokenAPI Scan、EggStriker 等 5 家）、T1（zznav、禾维 AI、MODELOC 等 16 家）及 T2 备用目录；
+  - **结构化比价探针靶标（6 家）**：提供实时搜索路径、API 端点与可用性探针定义；
+  - **SKU 规格标准池与词库**：预设 `finished_account`（成品号）正向特征与严格负向一票否决黑名单。
+
+---
+
+### 二、用户如何向 AI 提问使用本技能？
+
+当你在支持 Agent Skill 的智能体客户端（如 Codex、Gemini、Claude Code）中引入本项目时，可直接使用自然语言提问：
+
+| 实际需求 | 用户提问示例（直接对 AI 说） | 智能体后台自动执行动作 |
+| :--- | :--- | :--- |
+| **找现货成品** | *“帮我找便宜的 ChatGPT 4个月学生号成品，只要开箱即用的，不要代充”* | 自动加载负向黑名单否决代认证 -> 初筛聚合站现货 -> 执行 `verify_terminal.py` 验真 -> 交付落地购买直链卡片 |
+| **落地页验真** | *“帮我看看这个发卡店铺 https://buyai.dev/ 上面的 Muse 到底是多钱，有现货吗”* | 运行穿透验真脚本直连店铺，绕过历史假标价，提取实时结算价、真实库存与质保说明 |
+| **中转站防坑** | *“我想调用 Claude 3.7，推荐两家真官转不掺水的中转站”* | 检索 `targets.json` 中的 T0 中转评级，调取 7 维门禁判定纯度得分与换算倍率 |
+| **全库链接巡检** | *“检查一下整个仓库 40 个外链的存活状态”* | 运行 `check_links.py` 并发探测 40+ 链接，捕获 301 换绑并输出健康报告 |
+
+---
+
+### 三、智能体 SOP 与 7 维机读判定门禁
+
+- **专属 Agent Skill 规约**: [`.agents/skills/card-and-relay-tracker/SKILL.md`](./.agents/skills/card-and-relay-tracker/SKILL.md)
+  - 规范智能体严格执行“意图识别 -> 聚合一票否决初筛 -> 终端落地页穿透验真 -> 高信号决策卡片交付”闭环；
+  - 强制输出可直接点击的落地购买直链与折合月单价，杜绝说教。
+- **7 维机读判定门禁矩阵**: [`anti_traps.md`](./.agents/skills/card-and-relay-tracker/references/anti_traps.md)
+  - **GATE-01 (规格纯度)**：命中有“代认证/代充/自备号”一票否决；
+  - **GATE-02 (真实价格)**：废弃聚合站缓存，强制采信落地页实选结算价；
+  - **GATE-03 (真实库存)**：库存为 0 或补货排队直接剔除；
+  - **GATE-04 (邮箱质保)**：自建企业邮高危警示，无邮箱直登剔除；
+  - **GATE-05~07 (API中转)**：模型掺水拦截、隐蔽倍率人民币强制折算、上下文截断探针。
+
+---
+
+### 四、独立自动化工具命令行使用
+
+开发者或运维人员也可直接脱离智能体，在终端独立运行配套脚本：
+
+1. **终端落地页穿透验真（支持 WAF 盾识别与规格标签硬阻断）**:
+   ```bash
+   # 穿透验真指定发卡落地页，筛选"成品"并排除"代认证"干扰项
+   python scripts/verify_terminal.py "https://buyai.dev/" --sku "Muse" --require-tags "成品" --exclude-tags "代认证,自备" --json
+   ```
+
+2. **全量 40+ 外部链接并发探活与换绑追踪**:
+   ```bash
+   # 默认 10 线程并发巡检 CARDS.md, API_RELAY.md 与 README.md
+   python scripts/check_links.py --workers 10
+
+   # 如需配合代理分流检测
+   python scripts/check_links.py --proxy "http://127.0.0.1:7897"
+   ```
 
 ---
 
