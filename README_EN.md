@@ -6,18 +6,12 @@
 
 ---
 
-## About the Project & Agent-Driven Engine
+## About the Project
 
-When procuring third-party AI subscriptions or integrating developer API relays, users and autonomous agents routinely encounter three structural hazards:
+This repository provides an independent curated benchmark covering **16 AI subscription aggregators** and **24 developer API relays**, continuously monitored via automated probes with zero commercial bias.
 
-1. **Bait Pricing (Starting-Price Trap)**: Aggregators frequently display obsolete historical floor prices (e.g., $1.20 / ¥8) for sold-out trial codes, while real active in-stock packages cost significantly more.
-2. **Specification Confusion & Masked Services**: Aggregators lump assisted verification services ("SheerID verification only, bring your own account") together with genuine, ready-to-use finished accounts ("Pre-activated, card-linked, credentials included") under the same SKU.
-3. **Model Degradation & Hidden Token Multipliers**: Shady API relays claim official enterprise routing (e.g., Claude 3.7 / GPT-4o) while silently downgrading prompts to cheaper models or levying hidden billing multipliers on user tokens.
-
-**This repository is both a curated directory and an integrated AI Agent Skill & Verification Engine**:
-- **40-Node Embedded Registry**: [`targets.json`](./.agents/skills/card-and-relay-tracker/references/targets.json) provides structured metadata across 16 card aggregators and 24 API relays for instant in-memory resolution.
-- **7-Dimension Deterministic Decision Gates**: [`anti_traps.md`](./.agents/skills/card-and-relay-tracker/references/anti_traps.md) enforces machine-readable `FAIL`, `WARN`, and `REQUIRED` constraints, with strict hard-blocking against assisted services when finished accounts are requested.
-- **Two-Pass Terminal Verification Engine**: [`verify_terminal.py`](./scripts/verify_terminal.py) directly probes live storefronts, detects WAF challenges (Cloudflare, SafeLine), mitigates DOM price cross-contamination via proximity matching, and delivers direct purchase landing URLs with normalized monthly amortized pricing.
+### Built-in Agent Skill (`card-and-relay-tracker`)
+The project features a ready-to-use Agent Skill for autonomous coding agents (Codex, Gemini, Claude, Cursor). It automatically bypasses aggregator bait pricing, executes **two-pass terminal storefront verification**, hard-blocks assisted verification traps when finished accounts are requested, and delivers clickable purchase URLs with live inventory.
 
 ---
 

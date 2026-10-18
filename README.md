@@ -10,18 +10,13 @@
 
 ## 关于本项目 (About)
 
-在获取第三方 AI 账号订阅或对接 API 中转服务时，开发者与用户普遍面临三大行业痛点：
-1. **起步价刺客 (Bait Pricing)**：聚合站常年挂载历史失效底价（如 ¥8 / $1.2），跳转后发现系已售罄体验码，真实在售套餐价格翻倍；
-2. **规格混淆欺诈 (Spec Masking)**：聚合站将买家需自备账号的“代认证/代充”与开箱即用的“成品号”混置于同一分类，极易误买；
-3. **API 掺水与隐蔽倍率 (Model Degradation)**：中转服务商宣称官转 Claude 3.7 / GPT-4o，实际后台静默降级为逆向或廉价模型，并施加隐蔽分组倍率。
+本项目全量收录并独立评测主流第三方 **AI 发卡聚合比价平台（16 家）** 与 **API 中转服务商（24 家）**，提供无商业推广的实时可用率监测与综合评级。
 
-**本项目不仅是一份全量评测指南，更是一套赋能自主智能体的技能规约（Agent Skill）与自动化验真引擎**：
-- **40 节点全量资产字典**：[`targets.json`](./.agents/skills/card-and-relay-tracker/references/targets.json) 结构化收录 16 家发卡聚合平台与 24 家中转评测站，支持毫秒级内存解析；
-- **7 维机读判定门禁**：[`anti_traps.md`](./.agents/skills/card-and-relay-tracker/references/anti_traps.md) 制定了 FAIL / WARN / REQUIRED 级严密机器判据，成品号诉求下 100% 硬阻断代充代认证；
-- **双阶段穿透验真引擎**：[`verify_terminal.py`](./scripts/verify_terminal.py) 穿透发卡店铺直测实时库存、实付价格与折合月单价，交付可直接结算的落地购买链接。
+### 内置 Agent 智能体技能 (Built-in Skill)
+项目内置专属智能体技能 **[`card-and-relay-tracker`](./.agents/skills/card-and-relay-tracker/SKILL.md)**。支持任意 AI 编程助手（Codex、Gemini、Claude、Cursor）直接调用，自动规避聚合站起步价刺客与过期货架缓存，实现**终端店铺真价穿透验真**，严格硬阻断“代认证/代充”混入成品号，直接交付带有效库存的购买直达链接。
 
-> **About this project (English)**:
-> This repository is a dual-track directory and agentic verification toolchain. It addresses the pervasive industry issues of bait pricing, specification confusion (mixing assisted verification with finished accounts), and API model degradation. With an embedded 40-node registry and 7 deterministic decision gates, it allows AI coding agents and human developers to obtain authentic pricing, live inventory, and direct purchase URLs without manual cross-referencing.
+> **English Summary**:
+> An independent benchmark of 40 AI subscription platforms and API relays, featuring a built-in Agent Skill (`card-and-relay-tracker`) for real-time terminal price penetration, pure finished-account filtering, and direct purchasing URL delivery.
 
 ---
 
