@@ -12,11 +12,11 @@
 
 本项目全量收录并独立评测主流第三方 **AI 发卡聚合比价平台（16 家）** 与 **API 中转服务商（24 家）**，提供无商业推广的实时可用率监测与综合评级。
 
-### 内置 Agent 智能体技能 (Built-in Skill)
+### 内置快速检索 Skill (Built-in Skill)
 项目内置专属智能体技能 **[`card-and-relay-tracker`](./.agents/skills/card-and-relay-tracker/SKILL.md)**。支持任意 AI 编程助手（Codex、Gemini、Claude、Cursor）直接调用，自动规避聚合站起步价刺客与过期货架缓存，实现**终端店铺真价穿透验真**，严格硬阻断“代认证/代充”混入成品号，直接交付带有效库存的购买直达链接。
 
 > **English Summary**:
-> An independent benchmark of 40 AI subscription platforms and API relays, featuring a built-in Agent Skill (`card-and-relay-tracker`) for real-time terminal price penetration, pure finished-account filtering, and direct purchasing URL delivery.
+> An independent benchmark of 40 AI subscription platforms and API relays, featuring a built-in Quick Search Skill (`card-and-relay-tracker`) for real-time terminal price penetration, pure finished-account filtering, and direct purchasing URL delivery.
 
 ---
 
@@ -27,7 +27,7 @@
 | **卡网聚合比价榜** | ChatGPT、Claude、Gemini 订阅、成品号与兑换码比价（收录 16 家） | [`卡网完整榜`](./CARDS.md) |
 | **API 中转站全量榜** | 开发者接口调用、真假官转鉴定、实时可用率测速与倍率换算（收录 24 家） | [`中转站全量榜`](./API_RELAY.md) |
 | **多智能体打分体系** | 中立风控 (35%) + 数据功能 (35%) + 体验直连 (30%) 算法判据细则 | [`打分标准细则`](./SCORING.md) |
-| **AI Agent 智能体技能** | 双阶段真价穿透、成品号一票否决门禁、7 维决策矩阵与 CLI 工具链 | [`智能体技能规约`](./.agents/skills/card-and-relay-tracker/SKILL.md) |
+| **快速检索 Skill** | 双阶段真价穿透、成品号一票否决门禁、7 维决策矩阵与 CLI 工具链 | [`智能体技能规约`](./.agents/skills/card-and-relay-tracker/SKILL.md) |
 | **免责声明与使用条款** | 法律级非商业声明、资金安全严正警示及快速无条件移除流程 | [`免责声明条款`](./DISCLAIMER.md) |
 
 ---

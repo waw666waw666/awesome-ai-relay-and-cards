@@ -10,8 +10,8 @@
 
 This repository provides an independent curated benchmark covering **16 AI subscription aggregators** and **24 developer API relays**, continuously monitored via automated probes with zero commercial bias.
 
-### Built-in Agent Skill (`card-and-relay-tracker`)
-The project features a ready-to-use Agent Skill for autonomous coding agents (Codex, Gemini, Claude, Cursor). It automatically bypasses aggregator bait pricing, executes **two-pass terminal storefront verification**, hard-blocks assisted verification traps when finished accounts are requested, and delivers clickable purchase URLs with live inventory.
+### Built-in Quick Search Skill (`card-and-relay-tracker`)
+The project features a ready-to-use Quick Search Skill for autonomous coding agents (Codex, Gemini, Claude, Cursor). It automatically bypasses aggregator bait pricing, executes **two-pass terminal storefront verification**, hard-blocks assisted verification traps when finished accounts are requested, and delivers clickable purchase URLs with live inventory.
 
 ---
 
@@ -22,7 +22,7 @@ The project features a ready-to-use Agent Skill for autonomous coding agents (Co
 | **Card & Account Aggregators** | ChatGPT, Claude, Gemini subscriptions, finished accounts & redemption codes (16 platforms) | [`CARDS.md`](./CARDS.md) |
 | **API Relay Benchmarks** | Developer API endpoints, authenticity audits, latency probes & multiplier normalization (24 platforms) | [`API_RELAY.md`](./API_RELAY.md) |
 | **Multi-Agent Scoring System** | Neutrality & Risk (35%) + Data & Features (35%) + UX & Direct Connectivity (30%) | [`SCORING.md`](./SCORING.md) |
-| **Agent Skill & Toolchain** | Two-pass penetration verification SOP, 7-gate decision matrix & Python automation tools | [`.agents/skills/.../SKILL.md`](./.agents/skills/card-and-relay-tracker/SKILL.md) |
+| **Quick Search Skill** | Two-pass penetration verification SOP, 7-gate decision matrix & Python automation tools | [`.agents/skills/.../SKILL.md`](./.agents/skills/card-and-relay-tracker/SKILL.md) |
 | **Legal Disclaimer & Terms** | Non-commercial disclaimer, financial risk warnings & unconditional takedown procedure | [`DISCLAIMER.md`](./DISCLAIMER.md) |
 
 ---
