@@ -12,6 +12,7 @@ import re
 import json
 import time
 import argparse
+import ssl
 import urllib.request
 import urllib.error
 from urllib.parse import urlparse
@@ -55,16 +56,22 @@ def extract_urls_from_markdown(file_paths):
 
 
 def probe_single_url(url, proxy=None, timeout=6):
-    """双阶平滑探测单个 URL (HEAD -> GET 1KB)"""
+    """三阶平滑探测单个 URL (HEAD -> GET 1KB Range -> GET Stream Fallback)"""
     headers = {
         "User-Agent": USER_AGENT,
         "Accept": "*/*",
         "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
     }
     
-    opener = urllib.request.build_opener()
+    # 针对卡网环境放宽自签名与过期证书限制
+    ssl_ctx = ssl.create_default_context()
+    ssl_ctx.check_hostname = False
+    ssl_ctx.verify_mode = ssl.CERT_NONE
+
+    handlers = [urllib.request.HTTPSHandler(context=ssl_ctx)]
     if proxy:
-        opener.add_handler(urllib.request.ProxyHandler({"http": proxy, "https": proxy}))
+        handlers.append(urllib.request.ProxyHandler({"http": proxy, "https": proxy}))
+    opener = urllib.request.build_opener(*handlers)
 
     start_time = time.time()
     initial_domain = urlparse(url).netloc.lower()
@@ -114,6 +121,29 @@ def probe_single_url(url, proxy=None, timeout=6):
                 "error": None
             }
     except urllib.error.HTTPError as e:
+        # 若 CDN 拒绝 Range 请求 (406 Not Acceptable / 416 Range Not Satisfiable)，降级到普通无 Range GET (读前 1KB)
+        if e.code in (406, 416):
+            try:
+                req_fallback = urllib.request.Request(url, headers=headers, method="GET")
+                with opener.open(req_fallback, timeout=timeout) as resp:
+                    resp.read(1024)
+                    elapsed_ms = int((time.time() - start_time) * 1000)
+                    final_url = resp.geturl()
+                    final_domain = urlparse(final_url).netloc.lower()
+                    redirect_changed = (initial_domain != final_domain) and (initial_domain.replace("www.", "") != final_domain.replace("www.", ""))
+                    return {
+                        "url": url,
+                        "status_code": resp.status,
+                        "latency_ms": elapsed_ms,
+                        "final_url": final_url,
+                        "redirect_changed": redirect_changed,
+                        "state": "REDIRECT_CHANGED" if redirect_changed else "OK",
+                        "method": "GET_FALLBACK",
+                        "error": None
+                    }
+            except Exception:
+                pass
+
         elapsed_ms = int((time.time() - start_time) * 1000)
         return {
             "url": url,

@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "version": "1.0.0",
-  "description": "awesome-ai-relay-and-cards 聚合导航与终端口径靶标库",
+  "version": "1.1.0",
+  "description": "awesome-ai-relay-and-cards 聚合导航、比价靶标与规格特征字典",
   "aggregators": [
     {
       "name": "PriceAI",
@@ -52,24 +52,34 @@
       "features": ["官转纯度检测", "自动化探针抽检", "防逆向伪装"]
     }
   ],
-  "sample_terminal_shops": [
-    {
-      "name": "BuyAI (世默AI)",
-      "url": "https://buyai.dev/",
-      "system_type": "custom_rest_spa",
-      "api_endpoint": "https://buyai.dev/api/catalog",
-      "notes": "支持 GET /api/catalog 提取结构化商品列表与实时库存"
+  "spec_filters": {
+    "finished_account": {
+      "desc": "开箱即用成品号（已开通/已绑卡/带账号密码）",
+      "positive_keywords": ["成品", "独享", "已绑卡", "带原邮", "带邮箱", "直登", "全新号", "开箱即用", "自动发货", "独享号"],
+      "negative_keywords": ["代认证", "单认证", "自备", "代充", "包过", "需自备", "提供账号", "拍下发账号", "扫码登录", "只包认证", "不含订阅", "代过SheerID", "代开", "充值自身"]
     },
-    {
-      "name": "ClaudeMax",
-      "url": "https://claudemax.shop/",
-      "system_type": "independent_shop",
-      "notes": "主打海外成品号与月度订阅代充，支持 USDT 结算"
+    "recharge_or_verify_service": {
+      "desc": "纯代充/代认证服务（买家自备账号）",
+      "positive_keywords": ["代认证", "单认证", "自备账号", "代充", "代过", "充值"],
+      "negative_keywords": ["成品", "开箱即用", "带原邮"]
     }
-  ],
-  "common_goods_synonyms": {
-    "muse": ["Muse AI", "Muse", "Meta Muse", "10亿 Token", "10亿token邀请", "Meta 智能体"],
-    "claude": ["Claude Pro", "Claude 3.7", "Claude Team", "克劳德独享", "Anthropic 官号"],
-    "chatgpt": ["ChatGPT Plus", "GPT-4o", "OpenAI 独享号", "ChatGPT Team"]
+  },
+  "sku_definitions": {
+    "gpt_plus_student": {
+      "canonical_name": "ChatGPT Plus 4个月学生号成品",
+      "synonyms": ["gpt_plus_student", "ChatGPT学生号", "Plus学生成品", "GPT4个月教育优惠"],
+      "expected_duration_months": 4,
+      "price_benchmark_range": [120, 180]
+    },
+    "muse_ai_1b": {
+      "canonical_name": "Muse AI 10亿Token成品号",
+      "synonyms": ["muse", "muse_ai", "10亿Token", "Meta Muse", "10亿token邀请"],
+      "price_benchmark_range": [15, 25]
+    },
+    "claude_pro_solo": {
+      "canonical_name": "Claude Pro 独享月度号",
+      "synonyms": ["claude pro", "claude独享", "claude 3.7", "claude成品"],
+      "price_benchmark_range": [120, 160]
+    }
   }
 }
