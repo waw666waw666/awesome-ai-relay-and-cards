@@ -11,7 +11,7 @@
 | **卡网聚合比价榜** | ChatGPT、Claude、Gemini 订阅、成品号与兑换码比价（收录 16 家） | [`卡网完整榜`](./CARDS.md) |
 | **API 中转站全量榜** | 开发者接口调用、真假官转鉴定、实时可用率测速与倍率换算（收录 24 家） | [`中转站全量榜`](./API_RELAY.md) |
 | **多智能体打分体系** | 中立风控 (35%) + 数据功能 (35%) + 体验直连 (30%) 算法判据细则 | [`打分标准细则`](./SCORING.md) |
-| **Agent 维护技能** | 终端发卡落地页两段式穿透验真规范、14 维避坑手册与自动化工具 | [`智能体技能`](./.agents/skills/card-and-relay-tracker/SKILL.md) |
+| **Agent 维护技能** | 落地页真价穿透、成品号一票否决门禁、7 维避坑矩阵与自动化工具 | [`智能体技能`](./.agents/skills/card-and-relay-tracker/SKILL.md) |
 | **免责声明与使用条款** | 法律级非商业声明、资金安全严正警示及快速无条件移除流程 | [`免责声明条款`](./DISCLAIMER.md) |
 
 ---
@@ -109,15 +109,18 @@
 
 - **专属 Agent Skill**: [`.agents/skills/card-and-relay-tracker/SKILL.md`](./.agents/skills/card-and-relay-tracker/SKILL.md)
   - 规范 AI 智能体在面对比价和找号请求时的执行流程：严禁直信聚合站缓存标价，强制两段式穿透到终端发卡落地页。
-  - 涵盖 14 维发卡网与中转站实战避坑手册（[`anti_traps.md`](./.agents/skills/card-and-relay-tracker/references/anti_traps.md)）及精选站点嗅探靶标注册表（[`targets.json`](./.agents/skills/card-and-relay-tracker/references/targets.json)）。
+  - **规格纯度硬阻断**：严格区分【成品号】与【代充/代认证】服务，自动加载负向词库对“代认证、自备账号、单认证”实施一票否决。
+  - **7 维机读判定门禁矩阵**: [`anti_traps.md`](./.agents/skills/card-and-relay-tracker/references/anti_traps.md)（涵盖规格纯度、价格真伪、现货库存、邮箱质保、模型纯度、倍率膨胀换算与长文本截断等判定动作）。
+  - **标准化靶标与 SKU 定义池**: [`targets.json`](./.agents/skills/card-and-relay-tracker/references/targets.json)。
 - **落地页真价穿透验真脚本**: [`scripts/verify_terminal.py`](./scripts/verify_terminal.py)
-  - 纯 Python 标准库实现，支持自动嗅探发卡网开放 REST API / 提取页面状态 JSON，精准穿透 SKU 下拉选项，捕获真实在售价格、当前库存与售后质保条款。
+  - 纯 Python 标准库实现，支持自动嗅探发卡网开放 REST API / DOM 邻近特征窗口，精准识别 WAF 防火墙挑战盾，提取实时结算价格、真实库存与周期折合月单价。
   - 使用示例：
     ```bash
-    python scripts/verify_terminal.py --url "https://buyai.dev/" --sku "Muse"
+    # 穿透验真指定 SKU，并强制过滤代认证干扰
+    python scripts/verify_terminal.py "https://buyai.dev/" --sku "Muse" --require-tags "成品" --exclude-tags "代认证,自备" --json
     ```
 - **全量外链探活与换绑追踪脚本**: [`scripts/check_links.py`](./scripts/check_links.py)
-  - 并发执行 HEAD 探测 + GET 1KB 范围平滑回退，自动追踪跨域名 301/302 重定向换绑与下线预警。
+  - 并发执行 HEAD 探测 + GET 1KB 范围平滑回退，支持宽容 SSL 证书环境，自动追踪跨域名 301/302 重定向换绑与下线预警。
   - 使用示例：
     ```bash
     python scripts/check_links.py --workers 10
