@@ -125,18 +125,31 @@
 
 ---
 
-### 1. 快速接入 (Quick Start)
+### 1. 30 秒快速接入 (丢给 AI 直接安装)
 
-将技能导入至支持 Agent Skill 的客户端（Codex、Claude Code、Gemini、Cursor）：
+复制以下提示词直接发送给你的 AI 助手（Codex、Claude Code、Gemini、Cursor 等），AI 将自动拉取并装载本技能：
+
+> 📋 **一键装载提示词（点击直接复制）：**
+
+```text
+请帮我从 GitHub 安装并启用快速检索技能 (card-and-relay-tracker)：
+1. 仓库地址：https://github.com/waw666waw666/awesome-ai-relay-and-cards.git
+2. 提取仓库中的 `.agents/skills/card-and-relay-tracker` 目录及其配套的 `scripts/` 工具，完整安装到我当前项目或全局的 Agent 技能目录（如 `~/.agents/skills/card-and-relay-tracker`）；
+3. 安装完成后读取其 `SKILL.md`；后续当我询问 AI 账号（ChatGPT/Claude/Gemini/Muse 等）比价、现货成品号、API 中转站防坑或真伪鉴别时，直接调用该技能进行两阶段真价穿透验真！
+```
+
+<details>
+<summary><b>🛠️ 终端手动安装（可选）：</b></summary>
 
 ```bash
-# 方式 A：直接克隆并复制到本地/全局技能目录
+# 方式 A：克隆并复制到全局 Agent 技能目录
 git clone https://github.com/waw666waw666/awesome-ai-relay-and-cards.git
 cp -r awesome-ai-relay-and-cards/.agents/skills/card-and-relay-tracker ~/.agents/skills/
 
 # 方式 B：在当前项目中直接开箱使用（项目根目录下已预置）
 cd awesome-ai-relay-and-cards
 ```
+</details>
 
 ---
 

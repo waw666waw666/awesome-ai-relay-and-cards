@@ -71,9 +71,21 @@ This repository provides an integrated agentic runtime specification and a stand
 
 ---
 
-### 1. Quick Start
+### 1. Quick Start (Prompt to Install in 30s)
 
-Install and enable the skill in your AI agent workspace:
+Copy and paste this prompt directly into your AI coding assistant (Codex, Claude Code, Gemini, Cursor) to install automatically:
+
+> 📋 **One-Click Installation Prompt:**
+
+```text
+Please install and enable the card-and-relay-tracker skill from GitHub:
+1. Repository URL: https://github.com/waw666waw666/awesome-ai-relay-and-cards.git
+2. Copy the `.agents/skills/card-and-relay-tracker` folder and the companion `scripts/` directory into my workspace or global agent skills path (e.g. `~/.agents/skills/card-and-relay-tracker`);
+3. Read its `SKILL.md`. Whenever I ask about AI subscription pricing (ChatGPT/Claude/Gemini/Muse), in-stock finished accounts, or API relay verification, automatically invoke this skill for two-pass live storefront verification!
+```
+
+<details>
+<summary><b>🛠️ Manual Terminal Installation (Optional):</b></summary>
 
 ```bash
 # Method A: Clone and copy to local or global agent skills directory
@@ -83,6 +95,7 @@ cp -r awesome-ai-relay-and-cards/.agents/skills/card-and-relay-tracker ~/.agents
 # Method B: Use directly within this workspace
 cd awesome-ai-relay-and-cards
 ```
+</details>
 
 ---
 
