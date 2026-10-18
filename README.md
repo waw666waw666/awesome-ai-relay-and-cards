@@ -1,20 +1,27 @@
 # AI 发卡比价与 API 中转站精选指南 (2026)
 
+[简体中文](./README.md) | [English](./README_EN.md)
+
 > 本项目通过自动化网络探针与多智能体独立审计，对主流第三方 AI 发卡聚合平台与 API 中转站进行实时采样测试与分类评级。纯技术实验与公开信息整理，零商业推广，无人工干预。
+> 
+> *An independent, multi-agent audited benchmark and curated directory for AI account subscriptions and developer API relays. Powered by automated terminal probes and deterministic decision gates.*
 
 ---
 
-## 关于本项目与智能体技能 (About)
+## 关于本项目 (About)
 
-在获取第三方 AI 服务时，用户普遍面临三大高频暗坑：
-1. **起步价刺客**：比价站常年展示历史底价（如 ¥8），点击跳转落地页才发现是已售罄的引流款，真实在售规格翻倍；
-2. **规格混淆陷阱**：平台在同一分类下把仅包过验证的【代认证/代充（需买家自备号）】与开箱即用的【成品号】混在一起，极易误买；
-3. **API 掺水降级与计费膨胀**：部分中转站宣称支持 Claude 3.7 / GPT-4o 官转，实际后台降级为廉价模型或设置高达数倍的隐蔽扣费倍率。
+在获取第三方 AI 账号订阅或对接 API 中转服务时，开发者与用户普遍面临三大行业痛点：
+1. **起步价刺客 (Bait Pricing)**：聚合站常年挂载历史失效底价（如 ¥8 / $1.2），跳转后发现系已售罄体验码，真实在售套餐价格翻倍；
+2. **规格混淆欺诈 (Spec Masking)**：聚合站将买家需自备账号的“代认证/代充”与开箱即用的“成品号”混置于同一分类，极易误买；
+3. **API 掺水与隐蔽倍率 (Model Degradation)**：中转服务商宣称官转 Claude 3.7 / GPT-4o，实际后台静默降级为逆向或廉价模型，并施加隐蔽分组倍率。
 
-**本项目不仅是一份静态评测指南，更是一套可被任意 AI 客户端即插即用的智能体技能（Agent Skill）与自动化工具链**：
-- **40 家全量数字资产内置**：[`targets.json`](./.agents/skills/card-and-relay-tracker/references/targets.json) 完整收录 16 家发卡聚合网与 24 家中转评测站，支持毫秒级结构化调用；
-- **7 维机读判定门禁矩阵**：[`anti_traps.md`](./.agents/skills/card-and-relay-tracker/references/anti_traps.md) 制定了针对成品号纯度、真实结算价与掺水排查的严格机器判定规则；
-- **落地页真价穿透与防串价**：[`verify_terminal.py`](./scripts/verify_terminal.py) 直连发卡店铺提取真实库存、实付价格与折合月单价，输出带直达购买链接的决策卡片。
+**本项目不仅是一份全量评测指南，更是一套赋能自主智能体的技能规约（Agent Skill）与自动化验真引擎**：
+- **40 节点全量资产字典**：[`targets.json`](./.agents/skills/card-and-relay-tracker/references/targets.json) 结构化收录 16 家发卡聚合平台与 24 家中转评测站，支持毫秒级内存解析；
+- **7 维机读判定门禁**：[`anti_traps.md`](./.agents/skills/card-and-relay-tracker/references/anti_traps.md) 制定了 FAIL / WARN / REQUIRED 级严密机器判据，成品号诉求下 100% 硬阻断代充代认证；
+- **双阶段穿透验真引擎**：[`verify_terminal.py`](./scripts/verify_terminal.py) 穿透发卡店铺直测实时库存、实付价格与折合月单价，交付可直接结算的落地购买链接。
+
+> **About this project (English)**:
+> This repository is a dual-track directory and agentic verification toolchain. It addresses the pervasive industry issues of bait pricing, specification confusion (mixing assisted verification with finished accounts), and API model degradation. With an embedded 40-node registry and 7 deterministic decision gates, it allows AI coding agents and human developers to obtain authentic pricing, live inventory, and direct purchase URLs without manual cross-referencing.
 
 ---
 
@@ -25,7 +32,7 @@
 | **卡网聚合比价榜** | ChatGPT、Claude、Gemini 订阅、成品号与兑换码比价（收录 16 家） | [`卡网完整榜`](./CARDS.md) |
 | **API 中转站全量榜** | 开发者接口调用、真假官转鉴定、实时可用率测速与倍率换算（收录 24 家） | [`中转站全量榜`](./API_RELAY.md) |
 | **多智能体打分体系** | 中立风控 (35%) + 数据功能 (35%) + 体验直连 (30%) 算法判据细则 | [`打分标准细则`](./SCORING.md) |
-| **Agent 维护技能** | 落地页真价穿透、成品号一票否决门禁、7 维避坑矩阵与自动化工具 | [`智能体技能`](./.agents/skills/card-and-relay-tracker/SKILL.md) |
+| **AI Agent 智能体技能** | 双阶段真价穿透、成品号一票否决门禁、7 维决策矩阵与 CLI 工具链 | [`智能体技能规约`](./.agents/skills/card-and-relay-tracker/SKILL.md) |
 | **免责声明与使用条款** | 法律级非商业声明、资金安全严正警示及快速无条件移除流程 | [`免责声明条款`](./DISCLAIMER.md) |
 
 ---
@@ -117,64 +124,72 @@
 
 ---
 
-## Agent 维护技能与自动化工具
+## AI Agent 智能体协同与终端验真引擎 (AI Agent Skill & Terminal Verification Engine)
 
-本项目不仅是一份静态指南，还内置了开箱即用的 AI 智能体专属技能规范与轻量化纯 Python 工具链，实现了“数据资产全量内置 + 实时真价穿透验真 + 自动化外链巡检”：
+本项目不仅是人工查阅的静态名录，更是专为自主智能体（Codex、Gemini、Claude Code、Cursor 等）设计的结构化知识库与终端执行引擎。通过规范化契约与轻量化 Python 标准库工具，实现“**全量资产检索 + 落地店铺穿透验真 + 异常防御阻断**”的完整工程闭环。
 
-### 一、内置全量数字资产（40 家站点全覆盖）
-- 技能数据核心 [`targets.json`](./.agents/skills/card-and-relay-tracker/references/targets.json) **已完整内置收录本项目全部 40 家站点资产**：
-  - **16 家发卡聚合比价站**：T0（PriceAI、就爱比）、T1（OpenPrice、水獭比价、AIFeeRadar 等 6 家）及 T2 备用目录；
-  - **24 家 API 中转评测站**：T0（RouterHubs、TokenAPI Scan、EggStriker 等 5 家）、T1（zznav、禾维 AI、MODELOC 等 16 家）及 T2 备用目录；
-  - **结构化比价探针靶标（6 家）**：提供实时搜索路径、API 端点与可用性探针定义；
-  - **SKU 规格标准池与词库**：预设 `finished_account`（成品号）正向特征与严格负向一票否决黑名单。
+### 一、双阶段穿透决策架构 (Two-Pass Penetration Architecture)
 
----
+```
+[用户指令 / 智能体意图识别]
+           │
+           ▼
+┌────────────────────────────────────────┐
+│  第一阶段：聚合层索引初筛 (Discovery)   │  ◄── targets.json (40 站点全量库)
+│  - 广度匹配目标商品候选题录            │  ◄── GATE-01: 负向关键词一票否决
+│  - 排除失效与历史无货渠道              │
+└──────────────────┬─────────────────────┘
+                   │ 提取候选店铺落地页 URL
+                   ▼
+┌────────────────────────────────────────┐
+│  第二阶段：终端实时验真 (Penetration)   │  ◄── verify_terminal.py
+│  - 防爬 / WAF 挑战盾识别与旁路复核     │
+│  - DOM 邻近特征窗口防串价匹配          │
+│  - 复合周期与折合月单价规范化计算      │
+└──────────────────┬─────────────────────┘
+                   │ 结构化真价数据 (real_price, in_stock > 0, direct_url)
+                   ▼
+┌────────────────────────────────────────┐
+│  第三阶段：高信号决策卡片交付 (Output) │  ◄── 强制交付可点击落地购买直链
+└────────────────────────────────────────┘
+```
 
-### 二、用户如何向 AI 提问使用本技能？
+### 二、交互契约与智能体意图映射 (Interaction Contract Matrix)
 
-当你在支持 Agent Skill 的智能体客户端（如 Codex、Gemini、Claude Code）中引入本项目时，可直接使用自然语言提问：
+智能体在解析用户自然语言请求时，遵循以下输入契约与执行管线：
 
-| 实际需求 | 用户提问示例（直接对 AI 说） | 智能体后台自动执行动作 |
+| 意图模式 (Intent) | 契约输入范式 (Input Contract) | 智能体后台执行管线 (Execution Pipeline) |
 | :--- | :--- | :--- |
-| **找现货成品** | *“帮我找便宜的 ChatGPT 4个月学生号成品，只要开箱即用的，不要代充”* | 自动加载负向黑名单否决代认证 -> 初筛聚合站现货 -> 执行 `verify_terminal.py` 验真 -> 交付落地购买直链卡片 |
-| **落地页验真** | *“帮我看看这个发卡店铺 https://buyai.dev/ 上面的 Muse 到底是多钱，有现货吗”* | 运行穿透验真脚本直连店铺，绕过历史假标价，提取实时结算价、真实库存与质保说明 |
-| **中转站防坑** | *“我想调用 Claude 3.7，推荐两家真官转不掺水的中转站”* | 检索 `targets.json` 中的 T0 中转评级，调取 7 维门禁判定纯度得分与换算倍率 |
-| **全库链接巡检** | *“检查一下整个仓库 40 个外链的存活状态”* | 运行 `check_links.py` 并发探测 40+ 链接，捕获 301 换绑并输出健康报告 |
+| **成品号采购**<br>`Finished Account` | *"寻找 ChatGPT Plus 4 个月学生号成品，要求开箱即用，排除自备号代充"* | ① 加载 `spec_filters.finished_account.negative_keywords` 触发 GATE-01 硬阻断；<br>② 查询 T0/T1 聚合站锁定候选落地页；<br>③ 执行 `verify_terminal.py --require-tags "成品" --exclude-tags "代认证,自备"`；<br>④ 交付含购买直链与折合月单价卡片。 |
+| **店铺实时真伪审计**<br>`Storefront Audit` | *"核验 https://buyai.dev/ 上 Muse 的实时库存与真实结算价"* | ① 执行 `verify_terminal.py "https://buyai.dev/" --sku "Muse" --json`；<br>② 探测 WAF 盾及 DOM 邻近价格，剔除已售罄底价；<br>③ 提取质保条款并在卡片中呈现。 |
+| **中转站真伪与倍率审计**<br>`Relay Verification` | *"推荐两家真官转、不掺水且扣费倍率透明的 Claude 3.7 中转站"* | ① 查询 `targets.json` 的 `all_relay_directories`，筛选 T0 级基准站点；<br>② 执行 GATE-05 过滤纯度低于 80 分的站点；<br>③ 执行 GATE-06 统一换算每百万 Token 最终实付人民币价格。 |
+| **全库外链存活巡检**<br>`Directory Sweeping` | *"执行全库外链健康探测与重定向换绑雷达追踪"* | ① 并发调度 `check_links.py --workers 10`；<br>② 捕获 301/302 跨域名跳转与服务下线，输出异常清单。 |
 
----
+### 三、7 维机读判定门禁 (7-Dimensional Deterministic Decision Gates)
 
-### 三、智能体 SOP 与 7 维机读判定门禁
+完整机读判据详见 [`references/anti_traps.md`](./.agents/skills/card-and-relay-tracker/references/anti_traps.md)：
+- **GATE-01 (规格纯度)**：`FAIL`。命中“代认证/代充/自备号/包过”等词汇且诉求为成品时，一票否决。
+- **GATE-02 (结算真价)**：`FAIL`。废弃聚合站缓存，强制采信落地页实时结算价，杜绝起步价刺客。
+- **GATE-03 (有效库存)**：`FAIL`。排查幽灵秒发套路，库存为 0 或排队预售直接剔除。
+- **GATE-04 (交付安全)**：`WARN`。自建企业邮警示高危，缺失独立邮箱直接降权。
+- **GATE-05 (模型纯度)**：`FAIL`。MODELOC / Veridrop 纯度低于 80 分或存在降级行为直接阻断。
+- **GATE-06 (倍率透明)**：`REQUIRED`。严禁采信宣传倍率，强制折算为每百万 Token 最终实付单价。
+- **GATE-07 (上下文截断)**：`WARN`。长文本输入静默截断或逆向接口降级标记。
 
-- **专属 Agent Skill 规约**: [`.agents/skills/card-and-relay-tracker/SKILL.md`](./.agents/skills/card-and-relay-tracker/SKILL.md)
-  - 规范智能体严格执行“意图识别 -> 聚合一票否决初筛 -> 终端落地页穿透验真 -> 高信号决策卡片交付”闭环；
-  - 强制输出可直接点击的落地购买直链与折合月单价，杜绝说教。
-- **7 维机读判定门禁矩阵**: [`anti_traps.md`](./.agents/skills/card-and-relay-tracker/references/anti_traps.md)
-  - **GATE-01 (规格纯度)**：命中有“代认证/代充/自备号”一票否决；
-  - **GATE-02 (真实价格)**：废弃聚合站缓存，强制采信落地页实选结算价；
-  - **GATE-03 (真实库存)**：库存为 0 或补货排队直接剔除；
-  - **GATE-04 (邮箱质保)**：自建企业邮高危警示，无邮箱直登剔除；
-  - **GATE-05~07 (API中转)**：模型掺水拦截、隐蔽倍率人民币强制折算、上下文截断探针。
+### 四、独立自动化 CLI 工具链 (Standalone CLI Toolchain)
 
----
+除智能体自动调用外，开发者可在终端脱离 AI 直接执行纯 Python 标准库工具：
 
-### 四、独立自动化工具命令行使用
+```bash
+# 1. 发卡网落地页秒级真价穿透测试（支持防爬盾感知与标签强过滤）
+python scripts/verify_terminal.py "https://buyai.dev/" --sku "Muse" --require-tags "成品" --exclude-tags "代认证,自备" --json
 
-开发者或运维人员也可直接脱离智能体，在终端独立运行配套脚本：
+# 2. 全库 40+ 外链并发健康探测与跨域换绑雷达
+python scripts/check_links.py --workers 10
 
-1. **终端落地页穿透验真（支持 WAF 盾识别与规格标签硬阻断）**:
-   ```bash
-   # 穿透验真指定发卡落地页，筛选"成品"并排除"代认证"干扰项
-   python scripts/verify_terminal.py "https://buyai.dev/" --sku "Muse" --require-tags "成品" --exclude-tags "代认证,自备" --json
-   ```
-
-2. **全量 40+ 外部链接并发探活与换绑追踪**:
-   ```bash
-   # 默认 10 线程并发巡检 CARDS.md, API_RELAY.md 与 README.md
-   python scripts/check_links.py --workers 10
-
-   # 如需配合代理分流检测
-   python scripts/check_links.py --proxy "http://127.0.0.1:7897"
-   ```
+# 支持代理分流网络环境
+python scripts/check_links.py --proxy "http://127.0.0.1:7897"
+```
 
 ---
 
