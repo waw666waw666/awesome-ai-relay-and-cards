@@ -1,17 +1,10 @@
-# AI Subscription Pricing & API Relay Curated Guide (2026)
+# 2026 AI Subscription Pricing & API Relay Curated Guide
 
 [English](./README_EN.md) | [简体中文](./README.md)
 
-> An independent, multi-agent audited benchmark and curated directory for AI account subscriptions and developer API relays. Powered by automated terminal probes and deterministic decision gates. Zero commercial sponsorship, zero promotion bias.
-
----
-
-## About the Project
-
-This repository provides an independent curated benchmark covering **16 AI subscription aggregators** and **24 developer API relays**, continuously monitored via automated probes with zero commercial bias.
-
-### Built-in Quick Search Skill (`card-and-relay-tracker`)
-The project features a ready-to-use Quick Search Skill for autonomous coding agents (Codex, Gemini, Claude, Cursor). It automatically bypasses aggregator bait pricing, executes **two-pass terminal storefront verification**, hard-blocks assisted verification traps when finished accounts are requested, and delivers clickable purchase URLs with live inventory.
+> An independent benchmark covering **16 AI subscription aggregators** and **24 developer API relays** with zero commercial bias.
+> 
+> **Built-in Quick Search Skill**: Features the **[`card-and-relay-tracker`](./.agents/skills/card-and-relay-tracker/SKILL.md)** skill for autonomous coding agents (Codex, Gemini, Claude, Cursor) to bypass bait pricing, execute two-pass live storefront verification, hard-block assisted verification traps, and deliver direct purchase URLs with live inventory.
 
 ---
 

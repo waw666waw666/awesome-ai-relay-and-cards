@@ -2,21 +2,9 @@
 
 [简体中文](./README.md) | [English](./README_EN.md)
 
-> 本项目通过自动化网络探针与多智能体独立审计，对主流第三方 AI 发卡聚合平台与 API 中转站进行实时采样测试与分类评级。纯技术实验与公开信息整理，零商业推广，无人工干预。
+> 本项目全量收录并独立评测主流第三方 **AI 发卡聚合比价平台（16 家）** 与 **API 中转服务商（24 家）**，纯技术实验与公开信息整理，零商业推广，无人工干预。
 > 
-> *An independent, multi-agent audited benchmark and curated directory for AI account subscriptions and developer API relays. Powered by automated terminal probes and deterministic decision gates.*
-
----
-
-## 关于本项目 (About)
-
-本项目全量收录并独立评测主流第三方 **AI 发卡聚合比价平台（16 家）** 与 **API 中转服务商（24 家）**，提供无商业推广的实时可用率监测与综合评级。
-
-### 内置快速检索 Skill (Built-in Skill)
-项目内置专属智能体技能 **[`card-and-relay-tracker`](./.agents/skills/card-and-relay-tracker/SKILL.md)**。支持任意 AI 编程助手（Codex、Gemini、Claude、Cursor）直接调用，自动规避聚合站起步价刺客与过期货架缓存，实现**终端店铺真价穿透验真**，严格硬阻断“代认证/代充”混入成品号，直接交付带有效库存的购买直达链接。
-
-> **English Summary**:
-> An independent benchmark of 40 AI subscription platforms and API relays, featuring a built-in Quick Search Skill (`card-and-relay-tracker`) for real-time terminal price penetration, pure finished-account filtering, and direct purchasing URL delivery.
+> **内置快速检索 Skill**：集成专属智能体技能 **[`card-and-relay-tracker`](./.agents/skills/card-and-relay-tracker/SKILL.md)**，支持任意 AI 编程助手（Codex、Gemini、Claude、Cursor）直接调用，自动规避聚合站起步价刺客与过期货架缓存，实现终端店铺真价穿透验真与成品号强过滤，直接交付带有效库存的购买直链。
 
 ---
 
