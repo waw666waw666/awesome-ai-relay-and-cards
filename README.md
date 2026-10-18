@@ -1,4 +1,4 @@
-# AI 发卡比价与 API 中转站精选指南 (2026)
+# 2026 AI 发卡比价 & API 中转站精选指南
 
 [简体中文](./README.md) | [English](./README_EN.md)
 
