@@ -16,6 +16,13 @@ import urllib.error
 from urllib.parse import urlparse, urljoin
 from html.parser import HTMLParser
 
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
@@ -37,7 +44,7 @@ class TextExtractor(HTMLParser):
         return " ".join(self.texts)
 
 
-def fetch_url(url, timeout=10, headers=None):
+def fetch_url(url, timeout=10, headers=None, proxy=None):
     """标准库 HTTP 请求包装"""
     req_headers = {
         "User-Agent": USER_AGENT,
@@ -47,9 +54,13 @@ def fetch_url(url, timeout=10, headers=None):
     if headers:
         req_headers.update(headers)
 
+    opener = urllib.request.build_opener()
+    if proxy:
+        opener.add_handler(urllib.request.ProxyHandler({"http": proxy, "https": proxy}))
+
     req = urllib.request.Request(url, headers=req_headers)
     try:
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
+        with opener.open(req, timeout=timeout) as resp:
             charset = resp.headers.get_content_charset() or "utf-8"
             body = resp.read().decode(charset, errors="replace")
             return {
@@ -95,7 +106,7 @@ def check_cloudflare(response):
     return False
 
 
-def probe_rest_api(base_url, sku_kw=None):
+def probe_rest_api(base_url, sku_kw=None, proxy=None):
     """Level 1: 嗅探常见发卡 REST API (如 BuyAI catalog)"""
     parsed = urlparse(base_url)
     origin = f"{parsed.scheme}://{parsed.netloc}"
@@ -107,7 +118,7 @@ def probe_rest_api(base_url, sku_kw=None):
     ]
 
     for endpoint in candidate_endpoints:
-        res = fetch_url(endpoint, timeout=6)
+        res = fetch_url(endpoint, timeout=6, proxy=proxy)
         if res["status_code"] == 200 and res["body"]:
             try:
                 data = json.loads(res["body"])
@@ -235,10 +246,10 @@ def probe_dom_regex(html_body, sku_kw=None):
     return None
 
 
-def verify_terminal(url, sku_kw=None):
+def verify_terminal(url, sku_kw=None, proxy=None):
     """主穿透验真函数"""
     print(f"[*] 正在穿透核验终端落地页: {url}", file=sys.stderr)
-    res = fetch_url(url)
+    res = fetch_url(url, proxy=proxy)
 
     if res["error"] and res["status_code"] == 0:
         return {
@@ -256,7 +267,7 @@ def verify_terminal(url, sku_kw=None):
         }
 
     # 2. Level 1: 嗅探 REST API
-    api_items = probe_rest_api(url, sku_kw)
+    api_items = probe_rest_api(url, sku_kw, proxy=proxy)
     if api_items:
         return {
             "status": "verified",
@@ -286,10 +297,11 @@ def main():
     parser = argparse.ArgumentParser(description="终端发卡落地页价格与库存穿透验真工具")
     parser.add_argument("url", help="待核验的目标店铺落地页 URL")
     parser.add_argument("--sku", "-s", default="", help="目标商品/规格关键词 (如: Muse, Claude, 成品号)")
+    parser.add_argument("--proxy", "-p", default=None, help="代理服务器地址 (如: http://127.0.0.1:7897)")
     parser.add_argument("--json", "-j", action="store_true", help="以纯 JSON 格式输出结果")
     args = parser.parse_args()
 
-    result = verify_terminal(args.url, args.sku)
+    result = verify_terminal(args.url, args.sku, proxy=args.proxy)
 
     if args.json:
         print(json.dumps(result, ensure_ascii=False, indent=2))

@@ -25,7 +25,8 @@
       "tier": "T1",
       "type": "card_aggregator",
       "search_path": "/?q={keyword}",
-      "features": ["有货优先排序", "周边分类", "126家发卡网现货"]
+      "sku_path": "/sku/{sku_slug}",
+      "features": ["有货优先排序", "周边分类", "126家发卡网现货", "SKU直链穿透"]
     },
     {
       "name": "GetCheapAI",
