@@ -11,6 +11,7 @@
 | **卡网聚合比价榜** | ChatGPT、Claude、Gemini 订阅、成品号与兑换码比价（收录 16 家） | [`卡网完整榜`](./CARDS.md) |
 | **API 中转站全量榜** | 开发者接口调用、真假官转鉴定、实时可用率测速与倍率换算（收录 24 家） | [`中转站全量榜`](./API_RELAY.md) |
 | **多智能体打分体系** | 中立风控 (35%) + 数据功能 (35%) + 体验直连 (30%) 算法判据细则 | [`打分标准细则`](./SCORING.md) |
+| **Agent 维护技能** | 终端发卡落地页两段式穿透验真规范、14 维避坑手册与自动化工具 | [`智能体技能`](./.agents/skills/card-and-relay-tracker/SKILL.md) |
 | **免责声明与使用条款** | 法律级非商业声明、资金安全严正警示及快速无条件移除流程 | [`免责声明条款`](./DISCLAIMER.md) |
 
 ---
@@ -99,6 +100,28 @@
 3. **无条件移除流程**：站点运营方如不希望被收录，请按照 [免责声明第八条](./DISCLAIMER.md#八异议沟通与侵权移除流程-notice-and-takedown) 提交 Issue，我们在核实后将尽快（通常 7 个工作日内）无条件彻底移除。
 
 [查阅完整法律声明与使用条款](./DISCLAIMER.md)
+
+---
+
+## Agent 维护技能与自动化工具
+
+本项目内置开箱即用的 AI 智能体技能规范与轻量化纯 Python 校验工具，确保价格检索与外链状态不依赖聚合站过期货架缓存：
+
+- **专属 Agent Skill**: [`.agents/skills/card-and-relay-tracker/SKILL.md`](./.agents/skills/card-and-relay-tracker/SKILL.md)
+  - 规范 AI 智能体在面对比价和找号请求时的执行流程：严禁直信聚合站缓存标价，强制两段式穿透到终端发卡落地页。
+  - 涵盖 14 维发卡网与中转站实战避坑手册（[`anti_traps.md`](./.agents/skills/card-and-relay-tracker/references/anti_traps.md)）及精选站点嗅探靶标注册表（[`targets.json`](./.agents/skills/card-and-relay-tracker/references/targets.json)）。
+- **落地页真价穿透验真脚本**: [`scripts/verify_terminal.py`](./scripts/verify_terminal.py)
+  - 纯 Python 标准库实现，支持自动嗅探发卡网开放 REST API / 提取页面状态 JSON，精准穿透 SKU 下拉选项，捕获真实在售价格、当前库存与售后质保条款。
+  - 使用示例：
+    ```bash
+    python scripts/verify_terminal.py --url "https://buyai.dev/" --sku "Muse"
+    ```
+- **全量外链探活与换绑追踪脚本**: [`scripts/check_links.py`](./scripts/check_links.py)
+  - 并发执行 HEAD 探测 + GET 1KB 范围平滑回退，自动追踪跨域名 301/302 重定向换绑与下线预警。
+  - 使用示例：
+    ```bash
+    python scripts/check_links.py --workers 10
+    ```
 
 ---
 

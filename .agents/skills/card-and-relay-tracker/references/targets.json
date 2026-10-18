@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "awesome-ai-relay-and-cards 聚合导航与终端口径靶标库",
+  "aggregators": [
+    {
+      "name": "PriceAI",
+      "url": "https://priceai.cc/",
+      "tier": "T0",
+      "type": "card_aggregator",
+      "search_path": "/?q={keyword}",
+      "features": ["现货库存曲线", "历史价格", "多渠道对比"]
+    },
+    {
+      "name": "就爱比 (9AIB)",
+      "url": "https://9aib.com/",
+      "tier": "T0",
+      "type": "card_aggregator",
+      "search_path": "/search?k={keyword}",
+      "features": ["350+店铺验真", "现货底价雷达", "真实性监控"]
+    },
+    {
+      "name": "水獭比价",
+      "url": "https://shuita.xyz/",
+      "tier": "T1",
+      "type": "card_aggregator",
+      "search_path": "/?q={keyword}",
+      "features": ["有货优先排序", "周边分类", "126家发卡网现货"]
+    },
+    {
+      "name": "GetCheapAI",
+      "url": "https://www.getcheapai.com/zh-cn",
+      "tier": "T1",
+      "type": "relay_and_card_price",
+      "search_path": "/zh-cn?q={keyword}",
+      "features": ["520+模型价格", "90分钟可用性探针", "每百万Token折算"]
+    },
+    {
+      "name": "MODELOC",
+      "url": "https://modeloc.com/relays",
+      "tier": "T1",
+      "type": "relay_audit_directory",
+      "api_path": "/relays/list?sort=rating&limit=24",
+      "features": ["原始一致性检测", "掺水模型排查", "中转审计打分", "用户星级评价"]
+    },
+    {
+      "name": "Veridrop (真伪榜)",
+      "url": "https://veridrop.org/",
+      "tier": "T1",
+      "type": "relay_authenticity",
+      "features": ["官转纯度检测", "自动化探针抽检", "防逆向伪装"]
+    }
+  ],
+  "sample_terminal_shops": [
+    {
+      "name": "BuyAI (世默AI)",
+      "url": "https://buyai.dev/",
+      "system_type": "custom_rest_spa",
+      "api_endpoint": "https://buyai.dev/api/catalog",
+      "notes": "支持 GET /api/catalog 提取结构化商品列表与实时库存"
+    },
+    {
+      "name": "ClaudeMax",
+      "url": "https://claudemax.shop/",
+      "system_type": "independent_shop",
+      "notes": "主打海外成品号与月度订阅代充，支持 USDT 结算"
+    }
+  ],
+  "common_goods_synonyms": {
+    "muse": ["Muse AI", "Muse", "Meta Muse", "10亿 Token", "10亿token邀请", "Meta 智能体"],
+    "claude": ["Claude Pro", "Claude 3.7", "Claude Team", "克劳德独享", "Anthropic 官号"],
+    "chatgpt": ["ChatGPT Plus", "GPT-4o", "OpenAI 独享号", "ChatGPT Team"]
+  }
+}
