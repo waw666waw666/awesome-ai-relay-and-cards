@@ -37,9 +37,12 @@ description: >
 
 ### Step 1：需求规格归一
 - 明确用户目标：
-  - 目标商品：如 `Muse AI`、`Claude Pro 独享号`、`10亿 Token 扩容码`；
-  - 规格偏好：是需要`成品号（含一手邮箱）`还是只需要`激活码/代充`；
-  - 约束条件：现货优先、单价底价、是否支持国内直连与支付宝/微信支付。
+  - 目标商品：如 `Muse AI`、`ChatGPT Plus 学生号`、`Claude Pro 独享号`；
+  - 规格偏好：**明确区分【成品号】与【代充/代认证】**；
+    - **成品号**：必须是商家已注册好、已开好会员、已绑卡，付款后直接自动发卡密（账号+密码+邮箱）的开箱即用账号；
+    - **代认证/代充**：需要买家自备账号、自备正价订阅或由卖家代操作的纯服务。
+    - **【铁律】用户只要指明“成品/成品号”，严禁推荐任何“代认证”、“单认证”、“只包认证”、“需自备账号”的链接！**
+  - 约束条件：现货优先、单价底价、支持支付宝/微信支付。
 
 ### Step 2：靶标索引初筛
 - 查阅 `references/targets.json` 中的靶标列表：
@@ -47,11 +50,12 @@ description: >
   - 找 API 价格/测速 -> 优先检索 `GetCheapAI`、`EggStriker`；
   - 鉴别真伪/防掺水 -> 优先检索 `MODELOC`、`Veridrop`。
 
-### Step 3：终端店铺穿透核验
-- 对初筛出的具体购买落地页（如 `https://buyai.dev/`），运行终端验真：
+### Step 3：终端店铺穿透核验与规格过滤
+- 严格过滤聚合站返回结果，排除所有标签为“代认证”、“只包认证”的干扰项，锁定标记为`成品账号`、`已绑卡`的真实商品。
+- 对初筛出的具体购买落地页（如 `https://ccdawang.win/products/gptx`），运行终端验真：
   ```bash
   # 项目根目录下运行，或直接使用绝对路径：
-  python scripts/verify_terminal.py "https://buyai.dev/" --sku "Muse"
+  python scripts/verify_terminal.py "https://ccdawang.win/products/gptx" --sku "成品"
   ```
 - 确认返回值中 `in_stock == true` 且 `real_price` 为真实联动后价格，彻底过滤掉“起步价刺客”与“幽灵无货”店铺。
 
