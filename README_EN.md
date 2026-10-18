@@ -65,11 +65,28 @@ The project features a ready-to-use Quick Search Skill for autonomous coding age
 
 ---
 
-## AI Agent Skill & Terminal Verification Engine
+## Quick Search Skill (card-and-relay-tracker)
 
 This repository provides an integrated agentic runtime specification and a standalone Python toolchain designed for autonomous agents (Codex, Gemini, Claude Code, Cursor) and automated workflows.
 
-### 1. Two-Pass Verification Architecture
+---
+
+### 1. Quick Start
+
+Install and enable the skill in your AI agent workspace:
+
+```bash
+# Method A: Clone and copy to local or global agent skills directory
+git clone https://github.com/waw666waw666/awesome-ai-relay-and-cards.git
+cp -r awesome-ai-relay-and-cards/.agents/skills/card-and-relay-tracker ~/.agents/skills/
+
+# Method B: Use directly within this workspace
+cd awesome-ai-relay-and-cards
+```
+
+---
+
+### 2. Two-Pass Verification Architecture
 
 ```
 [User Request / Agent Intent]
@@ -95,30 +112,36 @@ This repository provides an integrated agentic runtime specification and a stand
 └────────────────────────────────────────┘
 ```
 
-### 2. Interaction Contract Matrix (Agent Invocation)
+---
 
-| Intent Pattern | Prompt Contract | Engine Execution Pipeline |
-| :--- | :--- | :--- |
-| **Procure Finished Account** | *"Find genuine, in-stock ChatGPT Plus 4-month student finished accounts. Ready to use only, exclude assisted verification."* | 1. Load `spec_filters.finished_account.negative_keywords` to hard-block assisted services.<br>2. Query Tier 0/1 aggregators for candidates.<br>3. Execute `verify_terminal.py` with `--require-tags "成品"` and `--exclude-tags "代认证,自备"`.<br>4. Output verified decision card with clickable purchase URLs. |
-| **Storefront Price Audit** | *"Verify current price and stock status for Muse at https://buyai.dev/."* | 1. Execute `verify_terminal.py "https://buyai.dev/" --sku "Muse" --json`.<br>2. Extract live checkout price, active stock count, and warranty terms.<br>3. Flag any WAF challenges or price mismatches. |
-| **Relay Authenticity Audit** | *"Recommend verified, non-degraded Claude 3.7 Sonnet API relays."* | 1. Query `targets.json` Tier 0 relay benchmarks (RouterHubs, TokenAPI Scan).<br>2. Enforce GATE-05 (Authenticity probe score ≥ 80).<br>3. Calculate real per-1M-token cost using GATE-06 formula (`Official_Price × Group_Ratio × Model_Ratio`). |
-| **Full Link Health Sweep** | *"Run automated health check and domain migration radar on all links."* | 1. Execute `check_links.py --workers 10`.<br>2. Track 301/302 domain redirects (`REDIRECT_CHANGED`) and server errors. |
+### 3. Seven Deterministic Decision Gates
 
-### 3. Seven Deterministic Decision Gates (Machine-Readable)
+Machine-readable policy enforced via [`references/anti_traps.md`](./.agents/skills/card-and-relay-tracker/references/anti_traps.md):
 
-Full specification available in [`references/anti_traps.md`](./.agents/skills/card-and-relay-tracker/references/anti_traps.md):
-
-- **GATE-01 (Spec Purity)**: Immediate `FAIL` on services requiring buyer's own account when finished account is requested.
-- **GATE-02 (Price Authenticity)**: Immediate `FAIL` on aggregator cache divergence; terminal checkout price takes absolute precedence.
-- **GATE-03 (Inventory Authenticity)**: Immediate `FAIL` on phantom stock (`stock == 0` or pre-order queues).
-- **GATE-04 (Account Security & Warranty)**: `WARN` on disposable custom-domain email addresses; require explicit warranty disclosure.
-- **GATE-05 (Model Authenticity)**: Immediate `FAIL` if purity score < 80 or model degradation detected.
-- **GATE-06 (Multiplier Transparency)**: `REQUIRED` conversion to effective cost per million tokens.
-- **GATE-07 (Context Integrity)**: `WARN` on silent prompt truncation beyond 8K/16K tokens.
+| Gate ID | Target Dimension | Severity Level | Deterministic Rule & Machine Action |
+| :---: | :--- | :---: | :--- |
+| **GATE-01** | **Spec Purity** | `FAIL (Hard Block)` | Immediate rejection of assisted verification/top-up services when finished accounts are requested. |
+| **GATE-02** | **Price Authenticity** | `FAIL (Hard Block)` | Discard aggregator cache; terminal live checkout price takes absolute precedence. |
+| **GATE-03** | **Inventory Authenticity** | `FAIL (Hard Block)` | Immediate rejection on phantom stock (`stock == 0` or pre-order queues). |
+| **GATE-04** | **Delivery & Warranty** | `WARN (Downgrade)` | Flag custom-domain emails; require explicit warranty disclosure. |
+| **GATE-05** | **Model Authenticity** | `FAIL (Hard Block)` | Immediate rejection if purity score < 80 or model degradation detected. |
+| **GATE-06** | **Multiplier Transparency** | `REQUIRED (Normalize)` | Convert marketing promotions into effective cost per million tokens. |
+| **GATE-07** | **Context Integrity** | `WARN (Flag)` | Flag silent prompt truncation beyond 8K/16K tokens and reverse-engineered endpoints. |
 
 ---
 
-## Standalone CLI Toolchain
+### 4. Output Showcase
+
+When a user asks: *"Find genuine in-stock ChatGPT Plus 4-month student finished accounts"*, the skill delivers a high-signal decision card:
+
+| Storefront | Live Price & Duration | Active Stock | Spec Details | Warranty Terms | Direct Purchase Link |
+| :--- | :---: | :---: | :--- | :--- | :--- |
+| **微赞优品** | **¥ 140.00** (4 mo, ~¥35/mo) | In Stock (15) | Edu student verified + Card-linked | 24-hour first login | [Click to Buy](https://wzyp.cn/item/2kecki) |
+| **CC大王** | **¥ 160.00** (4 mo, ~¥40/mo) | In Stock (8) | Edu student verified + Card-linked | First login guarantee | [Click to Buy](https://ccdawang.win/products/gptx) |
+
+---
+
+### 5. Standalone CLI Toolchain
 
 Both scripts are built with the Python standard library with zero external dependencies:
 

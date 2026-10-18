@@ -119,61 +119,89 @@
 
 ---
 
-## AI Agent 智能体协同与终端验真引擎 (AI Agent Skill & Terminal Verification Engine)
+## 快速检索 Skill (card-and-relay-tracker)
 
-本项目不仅是人工查阅的静态名录，更是专为自主智能体（Codex、Gemini、Claude Code、Cursor 等）设计的结构化知识库与终端执行引擎。通过规范化契约与轻量化 Python 标准库工具，实现“**全量资产检索 + 落地店铺穿透验真 + 异常防御阻断**”的完整工程闭环。
+本项目内置开箱即用的 AI 智能体专属技能规约与轻量化 Python 标准库工具，实现了“**全量资产快速检索 + 落地店铺真价穿透 + 7 维防坑拦截**”的完整工程闭环。
 
-### 一、双阶段穿透决策架构 (Two-Pass Penetration Architecture)
+---
+
+### 1. 快速接入 (Quick Start)
+
+将技能导入至支持 Agent Skill 的客户端（Codex、Claude Code、Gemini、Cursor）：
+
+```bash
+# 方式 A：直接克隆并复制到本地/全局技能目录
+git clone https://github.com/waw666waw666/awesome-ai-relay-and-cards.git
+cp -r awesome-ai-relay-and-cards/.agents/skills/card-and-relay-tracker ~/.agents/skills/
+
+# 方式 B：在当前项目中直接开箱使用（项目根目录下已预置）
+cd awesome-ai-relay-and-cards
+```
+
+---
+
+### 2. 双阶段穿透架构 (Architecture)
+
+为彻底解决聚合站“虚标底价引流”与“过期货架缓存”顽疾，技能严格执行两阶段检索管线：
 
 ```
-[用户指令 / 智能体意图识别]
+[用户指令 / 意图识别]
            │
            ▼
 ┌────────────────────────────────────────┐
-│  第一阶段：聚合层索引初筛 (Discovery)   │  ◄── targets.json (40 站点全量库)
-│  - 广度匹配目标商品候选题录            │  ◄── GATE-01: 负向关键词一票否决
-│  - 排除失效与历史无货渠道              │
+│  第一阶段：全量聚合初筛 (Discovery)     │  ◄── targets.json (40 站点全量资产库)
+│  - 广度匹配候选店铺落地页              │  ◄── GATE-01: 负向黑名单一票否决代认证
 └──────────────────┬─────────────────────┘
                    │ 提取候选店铺落地页 URL
                    ▼
 ┌────────────────────────────────────────┐
 │  第二阶段：终端实时验真 (Penetration)   │  ◄── verify_terminal.py
-│  - 防爬 / WAF 挑战盾识别与旁路复核     │
+│  - 全向 WAF 挑战盾识别与旁路复核       │
 │  - DOM 邻近特征窗口防串价匹配          │
-│  - 复合周期与折合月单价规范化计算      │
+│  - 复合时长月折合单价自动换算          │
 └──────────────────┬─────────────────────┘
                    │ 结构化真价数据 (real_price, in_stock > 0, direct_url)
                    ▼
 ┌────────────────────────────────────────┐
-│  第三阶段：高信号决策卡片交付 (Output) │  ◄── 强制交付可点击落地购买直链
+│  第三阶段：高信号决策卡片交付 (Output) │  ◄── 强制交付可点击购买直链与折合单价
 └────────────────────────────────────────┘
 ```
 
-### 二、交互契约与智能体意图映射 (Interaction Contract Matrix)
+---
 
-智能体在解析用户自然语言请求时，遵循以下输入契约与执行管线：
+### 3. 7 维机读判定门禁 (Decision Gates)
 
-| 意图模式 (Intent) | 契约输入范式 (Input Contract) | 智能体后台执行管线 (Execution Pipeline) |
-| :--- | :--- | :--- |
-| **成品号采购**<br>`Finished Account` | *"寻找 ChatGPT Plus 4 个月学生号成品，要求开箱即用，排除自备号代充"* | ① 加载 `spec_filters.finished_account.negative_keywords` 触发 GATE-01 硬阻断；<br>② 查询 T0/T1 聚合站锁定候选落地页；<br>③ 执行 `verify_terminal.py --require-tags "成品" --exclude-tags "代认证,自备"`；<br>④ 交付含购买直链与折合月单价卡片。 |
-| **店铺实时真伪审计**<br>`Storefront Audit` | *"核验 https://buyai.dev/ 上 Muse 的实时库存与真实结算价"* | ① 执行 `verify_terminal.py "https://buyai.dev/" --sku "Muse" --json`；<br>② 探测 WAF 盾及 DOM 邻近价格，剔除已售罄底价；<br>③ 提取质保条款并在卡片中呈现。 |
-| **中转站真伪与倍率审计**<br>`Relay Verification` | *"推荐两家真官转、不掺水且扣费倍率透明的 Claude 3.7 中转站"* | ① 查询 `targets.json` 的 `all_relay_directories`，筛选 T0 级基准站点；<br>② 执行 GATE-05 过滤纯度低于 80 分的站点；<br>③ 执行 GATE-06 统一换算每百万 Token 最终实付人民币价格。 |
-| **全库外链存活巡检**<br>`Directory Sweeping` | *"执行全库外链健康探测与重定向换绑雷达追踪"* | ① 并发调度 `check_links.py --workers 10`；<br>② 捕获 301/302 跨域名跳转与服务下线，输出异常清单。 |
+技能在后台执行时，强制调用 [`anti_traps.md`](./.agents/skills/card-and-relay-tracker/references/anti_traps.md) 规则矩阵实施自动化拦截：
 
-### 三、7 维机读判定门禁 (7-Dimensional Deterministic Decision Gates)
+| 门禁编号 | 检验维度 | 拦截级别 | 判定规则与处置动作 |
+| :---: | :--- | :---: | :--- |
+| **GATE-01** | **规格纯度** | `FAIL (一票否决)` | 成品诉求下一票否决“代认证/代充/自备号/包过”，严禁混淆交付。 |
+| **GATE-02** | **结算真价** | `FAIL (一票否决)` | 废弃聚合站标价，强制采信落地页实时实付价，彻底消除起步价刺客。 |
+| **GATE-03** | **有效库存** | `FAIL (一票否决)` | 排查幽灵秒发，库存为 0 或排队预售直接剔除，仅保留有效现货。 |
+| **GATE-04** | **交付安全** | `WARN (警示降权)` | 自建企业邮标注高危，无独立邮箱剔除，加粗展示质保条款。 |
+| **GATE-05** | **模型纯度** | `FAIL (一票否决)` | MODELOC / Veridrop 纯度低于 80 分或存在模型降级直接阻断。 |
+| **GATE-06** | **倍率透明** | `REQUIRED (强制折算)` | 穿透宣传充赠，强制折算为每百万 Token 最终实付人民币价格。 |
+| **GATE-07** | **上下文截断** | `WARN (警示标记)` | 识别长文本静默截断与逆向接口，标注文档实际处理上限。 |
 
-完整机读判据详见 [`references/anti_traps.md`](./.agents/skills/card-and-relay-tracker/references/anti_traps.md)：
-- **GATE-01 (规格纯度)**：`FAIL`。命中“代认证/代充/自备号/包过”等词汇且诉求为成品时，一票否决。
-- **GATE-02 (结算真价)**：`FAIL`。废弃聚合站缓存，强制采信落地页实时结算价，杜绝起步价刺客。
-- **GATE-03 (有效库存)**：`FAIL`。排查幽灵秒发套路，库存为 0 或排队预售直接剔除。
-- **GATE-04 (交付安全)**：`WARN`。自建企业邮警示高危，缺失独立邮箱直接降权。
-- **GATE-05 (模型纯度)**：`FAIL`。MODELOC / Veridrop 纯度低于 80 分或存在降级行为直接阻断。
-- **GATE-06 (倍率透明)**：`REQUIRED`。严禁采信宣传倍率，强制折算为每百万 Token 最终实付单价。
-- **GATE-07 (上下文截断)**：`WARN`。长文本输入静默截断或逆向接口降级标记。
+---
 
-### 四、独立自动化 CLI 工具链 (Standalone CLI Toolchain)
+### 4. 交付效果示例 (Output Showcase)
 
-除智能体自动调用外，开发者可在终端脱离 AI 直接执行纯 Python 标准库工具：
+当用户询问：“*帮我找 ChatGPT Plus 4 个月学生成品号，要开箱即用的*”，技能处理后直接输出高信号卡片：
+
+| 发卡店铺 | 实时价格与时长 | 库存状态 | 交付规格 | 售后质保 | 购买直达链接 |
+| :--- | :---: | :---: | :--- | :--- | :--- |
+| **微赞优品** | **¥ 140.00** (4个月，折合¥35/月) | 现货 15 件 | 学生已认证绑卡成品 (含原邮) | 首登质保 24 小时 | [点击直达购买](https://wzyp.cn/item/2kecki) |
+| **CC大王** | **¥ 160.00** (4个月，折合¥40/月) | 现货 8 件 | 学生已认证绑卡成品 (含原邮) | 首登质保 | [点击直达购买](https://ccdawang.win/products/gptx) |
+
+- **规格本质**：海外高校 Edu 邮箱 + SheerID 学生优惠订阅 + 虚拟信用卡绑卡扣款；
+- **核心避坑**：首登质保内务必测试可用性；及时绑定备用 2FA 并修改邮箱密码；请勿在账号内存放关键机密数据。
+
+---
+
+### 5. 独立自动化 CLI 工具链 (CLI Toolchain)
+
+无需启动 AI 智能体，也可在终端直接运行配套脚本：
 
 ```bash
 # 1. 发卡网落地页秒级真价穿透测试（支持防爬盾感知与标签强过滤）
@@ -182,7 +210,7 @@ python scripts/verify_terminal.py "https://buyai.dev/" --sku "Muse" --require-ta
 # 2. 全库 40+ 外链并发健康探测与跨域换绑雷达
 python scripts/check_links.py --workers 10
 
-# 支持代理分流网络环境
+# 如需配合代理分流检测
 python scripts/check_links.py --proxy "http://127.0.0.1:7897"
 ```
 
