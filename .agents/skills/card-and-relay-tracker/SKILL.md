@@ -43,13 +43,14 @@ description: >
 
 ### Step 2：靶标索引初筛
 - 查阅 `references/targets.json` 中的靶标列表：
-  - 找成品号/激活码 ➔ 优先检索 `PriceAI`、`水獭比价`、`就爱比 (9AIB)` 等；
-  - 找 API 价格/测速 ➔ 优先检索 `GetCheapAI`、`EggStriker`；
-  - 鉴别真伪/防掺水 ➔ 优先检索 `MODELOC`、`Veridrop`。
+  - 找成品号/激活码 -> 优先检索 `PriceAI`、`水獭比价`、`就爱比 (9AIB)` 等；
+  - 找 API 价格/测速 -> 优先检索 `GetCheapAI`、`EggStriker`；
+  - 鉴别真伪/防掺水 -> 优先检索 `MODELOC`、`Veridrop`。
 
 ### Step 3：终端店铺穿透核验
 - 对初筛出的具体购买落地页（如 `https://buyai.dev/`），运行终端验真：
   ```bash
+  # 项目根目录下运行，或直接使用绝对路径：
   python scripts/verify_terminal.py "https://buyai.dev/" --sku "Muse"
   ```
 - 确认返回值中 `in_stock == true` 且 `real_price` 为真实联动后价格，彻底过滤掉“起步价刺客”与“幽灵无货”店铺。
