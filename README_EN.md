@@ -136,18 +136,7 @@ Machine-readable policy enforced via [`references/anti_traps.md`](./.agents/skil
 
 ---
 
-### 4. Output Showcase
-
-When a user asks: *"Find genuine in-stock ChatGPT Plus 4-month student finished accounts"*, the skill delivers a high-signal decision card:
-
-| Storefront | Live Price & Duration | Active Stock | Spec Details | Warranty Terms | Direct Purchase Link |
-| :--- | :---: | :---: | :--- | :--- | :--- |
-| **微赞优品** | **¥ 140.00** (4 mo, ~¥35/mo) | In Stock (15) | Edu student verified + Card-linked | 24-hour first login | [Click to Buy](https://wzyp.cn/item/2kecki) |
-| **CC大王** | **¥ 160.00** (4 mo, ~¥40/mo) | In Stock (8) | Edu student verified + Card-linked | First login guarantee | [Click to Buy](https://ccdawang.win/products/gptx) |
-
----
-
-### 5. Standalone CLI Toolchain
+### 4. Standalone CLI Toolchain
 
 Both scripts are built with the Python standard library with zero external dependencies:
 
