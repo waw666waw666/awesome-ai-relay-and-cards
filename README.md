@@ -4,7 +4,7 @@
 
 > 本项目全量收录并独立评测主流第三方 **AI 发卡聚合比价平台（16 家）** 与 **API 中转服务商（24 家）**，纯技术实验与公开信息整理，零商业推广，无人工干预。
 > 
-> **内置快速检索 Skill**：集成专属智能体技能 **[`card-and-relay-tracker`](./.agents/skills/card-and-relay-tracker/SKILL.md)**，支持任意 AI 编程助手（Codex、Gemini、Claude、Cursor）直接调用，自动规避聚合站起步价刺客与过期货架缓存，实现终端店铺真价穿透验真与成品号强过滤，直接交付带有效库存的购买直链。
+> **内置 AI 采办秘书**：集成专属智能体技能 **[`card-and-relay-tracker`](./.agents/skills/card-and-relay-tracker/SKILL.md)**，专为高效选购 AI 账号（ChatGPT、Claude、Gemini、Cursor 等）打造。懂需求、替你排雷、直连全网 1000+ 店铺现货，以秘书简报形式秒级呈报优质货源直达链接。
 
 ---
 
@@ -15,7 +15,7 @@
 | **卡网聚合比价榜** | ChatGPT、Claude、Gemini 订阅、成品号与兑换码比价（收录 16 家） | [`卡网完整榜`](./CARDS.md) |
 | **API 中转站全量榜** | 开发者接口调用、真假官转鉴定、实时可用率测速与倍率换算（收录 24 家） | [`中转站全量榜`](./API_RELAY.md) |
 | **多智能体打分体系** | 中立风控 (35%) + 数据功能 (35%) + 体验直连 (30%) 算法判据细则 | [`打分标准细则`](./SCORING.md) |
-| **快速检索 Skill** | 双阶段真价穿透、成品号一票否决门禁、7 维决策矩阵与 CLI 工具链 | [`智能体技能规约`](./.agents/skills/card-and-relay-tracker/SKILL.md) |
+| **AI 采办秘书 Skill** | 全网发卡现货秒级核验、残次号硬核排雷、分层秘书简报与 CLI 工具链 | [`智能体技能规约`](./.agents/skills/card-and-relay-tracker/SKILL.md) |
 | **免责声明与使用条款** | 法律级非商业声明、资金安全严正警示及快速无条件移除流程 | [`免责声明条款`](./DISCLAIMER.md) |
 
 ---
@@ -107,9 +107,9 @@
 
 ---
 
-## 快速检索 Skill (card-and-relay-tracker)
+## AI 资产采办与避坑秘书 (card-and-relay-tracker)
 
-本项目内置开箱即用的 AI 智能体专属技能规约与轻量化 Python 标准库工具，实现了“**全量资产快速检索 + 落地店铺真价穿透 + 7 维防坑拦截**”的完整工程闭环。
+本项目内置开箱即用的 AI 智能体专属采办秘书规约与轻量化 Python 标准库工具，实现了“**全网发卡现货秒级核验 + 残次高危号硬核排雷 + 高级秘书简报交付**”的完整工程闭环。
 
 ---
 
@@ -120,10 +120,10 @@
 > 📋 **一键装载提示词（点击直接复制）：**
 
 ```text
-请帮我从 GitHub 安装并启用快速检索技能 (card-and-relay-tracker)：
+请帮我从 GitHub 安装并启用 AI 资产采办与避坑秘书 (card-and-relay-tracker)：
 1. 仓库地址：https://github.com/waw666waw666/awesome-ai-relay-and-cards.git
 2. 提取仓库中的 `.agents/skills/card-and-relay-tracker` 目录及其配套的 `scripts/` 工具，完整安装到我当前项目或全局的 Agent 技能目录（如 `~/.agents/skills/card-and-relay-tracker`）；
-3. 安装完成后读取其 `SKILL.md`；后续当我询问 AI 账号（ChatGPT/Claude/Gemini/Muse 等）比价、现货成品号、API 中转站防坑或真伪鉴别时，直接调用该技能进行两阶段真价穿透验真！
+3. 安装完成后读取其 `SKILL.md`；后续当我询问任何 AI 账号（Gemini 学生认证、ChatGPT、Claude、Cursor 等）现货、比价、中转站推荐时，像高级秘书一样直接调用该技能核验排雷并输出高信号简报！
 ```
 
 <details>

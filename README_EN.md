@@ -4,7 +4,7 @@
 
 > An independent benchmark covering **16 AI subscription aggregators** and **24 developer API relays** with zero commercial bias.
 > 
-> **Built-in Quick Search Skill**: Features the **[`card-and-relay-tracker`](./.agents/skills/card-and-relay-tracker/SKILL.md)** skill for autonomous coding agents (Codex, Gemini, Claude, Cursor) to bypass bait pricing, execute two-pass live storefront verification, hard-block assisted verification traps, and deliver direct purchase URLs with live inventory.
+> **Built-in AI Procurement Secretary**: Features the **[`card-and-relay-tracker`](./.agents/skills/card-and-relay-tracker/SKILL.md)** skill for autonomous coding agents (Codex, Gemini, Claude, Cursor) to act as an executive procurement secretary—identifying genuine intent, filtering degraded or ban-risk accounts across 1000+ merchant stores, and presenting executive purchase briefs with direct clickable links.
 
 ---
 
@@ -15,7 +15,7 @@
 | **Card & Account Aggregators** | ChatGPT, Claude, Gemini subscriptions, finished accounts & redemption codes (16 platforms) | [`CARDS.md`](./CARDS.md) |
 | **API Relay Benchmarks** | Developer API endpoints, authenticity audits, latency probes & multiplier normalization (24 platforms) | [`API_RELAY.md`](./API_RELAY.md) |
 | **Multi-Agent Scoring System** | Neutrality & Risk (35%) + Data & Features (35%) + UX & Direct Connectivity (30%) | [`SCORING.md`](./SCORING.md) |
-| **Quick Search Skill** | Two-pass penetration verification SOP, 7-gate decision matrix & Python automation tools | [`.agents/skills/.../SKILL.md`](./.agents/skills/card-and-relay-tracker/SKILL.md) |
+| **AI Procurement Secretary Skill** | Multi-platform inventory verification, risk filtering, executive briefs & standalone CLI toolchain | [`.agents/skills/.../SKILL.md`](./.agents/skills/card-and-relay-tracker/SKILL.md) |
 | **Legal Disclaimer & Terms** | Non-commercial disclaimer, financial risk warnings & unconditional takedown procedure | [`DISCLAIMER.md`](./DISCLAIMER.md) |
 
 ---
@@ -58,7 +58,7 @@
 
 ---
 
-## Quick Search Skill (card-and-relay-tracker)
+## AI Procurement Secretary (card-and-relay-tracker)
 
 This repository provides an integrated agentic runtime specification and a standalone Python toolchain designed for autonomous agents (Codex, Gemini, Claude Code, Cursor) and automated workflows.
 
@@ -71,10 +71,10 @@ Copy and paste this prompt directly into your AI coding assistant (Codex, Claude
 > 📋 **One-Click Installation Prompt:**
 
 ```text
-Please install and enable the card-and-relay-tracker skill from GitHub:
+Please install and enable the AI Procurement Secretary (card-and-relay-tracker) skill from GitHub:
 1. Repository URL: https://github.com/waw666waw666/awesome-ai-relay-and-cards.git
 2. Copy the `.agents/skills/card-and-relay-tracker` folder and the companion `scripts/` directory into my workspace or global agent skills path (e.g. `~/.agents/skills/card-and-relay-tracker`);
-3. Read its `SKILL.md`. Whenever I ask about AI subscription pricing (ChatGPT/Claude/Gemini/Muse), in-stock finished accounts, or API relay verification, automatically invoke this skill for two-pass live storefront verification!
+3. Read its `SKILL.md`. Whenever I ask about AI subscriptions (Gemini Student Offer, ChatGPT, Claude, Cursor), in-stock finished accounts, or API relays, act as an executive procurement secretary to filter risks and deliver clean decision briefs!
 ```
 
 <details>
