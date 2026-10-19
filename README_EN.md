@@ -141,10 +141,14 @@ Machine-readable policy enforced via [`references/anti_traps.md`](./.agents/skil
 Both scripts are built with the Python standard library with zero external dependencies:
 
 ```bash
-# 1. Terminal Storefront Live Price & Inventory Penetration
+# 1. Multi-platform AI card aggregator query with deterministic decision gates (Gemini, ChatGPT, Claude, Cursor, etc.)
+python scripts/query_cards.py "gemini"
+python scripts/query_cards.py "chatgpt" --limit 5
+
+# 2. Terminal Storefront Live Price & Inventory Penetration (Anti-WAF challenge detection & anti-bait matching)
 python scripts/verify_terminal.py "https://buyai.dev/" --sku "Muse" --require-tags "成品" --exclude-tags "代认证,自备" --json
 
-# 2. Concurrency Link Health & Domain Redirect Radar (40+ Endpoints)
+# 3. Concurrency Link Health & Domain Redirect Radar (40+ Endpoints)
 python scripts/check_links.py --workers 10
 
 # Optional proxy support for cross-border network environments

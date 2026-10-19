@@ -1,0 +1,4 @@
+__pycache__/
+*.py[cod]
+.priceai_channels_cache.json
+scripts/.priceai_channels_cache.json

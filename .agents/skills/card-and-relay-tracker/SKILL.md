@@ -30,12 +30,14 @@ description: >
 ## 二、四大典型应用场景与操作路径
 
 ### 场景 1：找现货成品号 / 会员卡密（核心高频）
-- **触发意图**：“找便宜的 ChatGPT 学生号成品”、“买 Claude Pro 独享号”、“哪家有 Muse 现货”。
+- **触发意图**：“找便宜的 ChatGPT 学生号成品”、“买 Claude Pro 独享号”、“哪家有 Gemini 现货/学生号”、“找 Cursor 账号”。
 - **执行路径**：
-  1. 读取 `targets.json` 中的 `spec_filters.finished_account.negative_keywords`，**开启一票否决门禁**（严格阻断代认证/自备号）；
-  2. 优先检索 T0/T1 聚合站（PriceAI / 水獭比价 / 9AIB）锁定 2~3 个标称现货的落地店铺 URL；
-  3. 执行终端验真脚本 `python scripts/verify_terminal.py "<落地页URL>" --sku "<关键词>" --require-tags "成品" --exclude-tags "代认证,自备"`；
-  4. 确认 `in_stock == true` 且提取实付价与月折合单价后，输出包含可点击购买链接的交付卡片。
+  1. 直接运行内置全量聚合检索脚本：
+     `python scripts/query_cards.py "<关键词>"`（如 `python scripts/query_cards.py "gemini"` 或 `python scripts/query_cards.py "chatgpt"`）；
+  2. 脚本自动直连 T0 级聚合引擎 PriceAI 数据库（涵盖 50+ AI 品类与 1000+ 在售发卡店铺），并严格执行 GATE-01 ~ GATE-03 门禁规则，自动剔除“代充/代认证/自备号/人机验证/封号无售后”等陷阱；
+  3. 输出通过门禁的实时在售店铺名、真实实付价、月折合单价、货品标题及直达购买链接；
+  4. 如需对特定落地页进行单点深度 DOM 验真，执行 `python scripts/verify_terminal.py "<落地页URL>" --sku "<关键词>"`；
+  5. 采用标准高信号卡片直接交付用户，拒绝长篇百科说教。
 
 ### 场景 2：查 API 中转站 / 鉴真假官转（模型开发者）
 - **触发意图**：“推荐两家稳的 Claude 3.7 中转”、“查查某某中转靠不靠谱”、“有没有不掺水的中转”。

@@ -191,10 +191,14 @@ cd awesome-ai-relay-and-cards
 无需启动 AI 智能体，也可在终端直接运行配套脚本：
 
 ```bash
-# 1. 发卡网落地页秒级真价穿透测试（支持防爬盾感知与标签强过滤）
+# 1. AI 账号全网发卡现货聚合检索与门禁过滤（实时覆盖 Gemini、ChatGPT、Claude、Cursor 等 50+ 品类）
+python scripts/query_cards.py "gemini"
+python scripts/query_cards.py "chatgpt" --limit 5
+
+# 2. 单点发卡网落地页秒级真价穿透测试（支持防爬盾感知、防串价与标签强过滤）
 python scripts/verify_terminal.py "https://buyai.dev/" --sku "Muse" --require-tags "成品" --exclude-tags "代认证,自备" --json
 
-# 2. 全库 40+ 外链并发健康探测与跨域换绑雷达
+# 3. 全库 40+ 外链并发健康探测与跨域换绑雷达
 python scripts/check_links.py --workers 10
 
 # 如需配合代理分流检测

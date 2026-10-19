@@ -124,6 +124,17 @@
       "canonical_name": "Claude Pro 独享月度号",
       "synonyms": ["claude pro", "claude独享", "claude 3.7", "claude成品"],
       "price_benchmark_range": [120, 160]
+    },
+    "gemini_pro_year": {
+      "canonical_name": "Gemini Pro / Google AI 12~18个月成品号",
+      "synonyms": ["gemini", "gemini_pro_year", "google_ai_pro", "gemini学生号", "gemini成品号"],
+      "expected_duration_months": 12,
+      "price_benchmark_range": [5, 30]
+    },
+    "cursor_account": {
+      "canonical_name": "Cursor Pro / 普号成品",
+      "synonyms": ["cursor", "cursor_account", "cursor pro"],
+      "price_benchmark_range": [1, 20]
     }
   }
 }
