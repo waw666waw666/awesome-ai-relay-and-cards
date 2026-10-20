@@ -3,8 +3,6 @@
 [简体中文](./README.md) | [English](./README_EN.md)
 
 > 本项目全量收录并独立评测主流第三方 **AI 发卡聚合比价平台（16 家）** 与 **API 中转服务商（24 家）**，纯技术实验与公开信息整理，零商业推广，无人工干预。
-> 
-> **内置 AI 采办秘书**：集成专属智能体技能 **[`card-and-relay-tracker`](./.agents/skills/card-and-relay-tracker/SKILL.md)**，专为高效选购 AI 账号（ChatGPT、Claude、Gemini、Cursor 等）打造。懂需求、替你排雷、直连全网 1000+ 店铺现货，以秘书简报形式秒级呈报优质货源直达链接。
 
 ---
 
@@ -15,7 +13,6 @@
 | **卡网聚合比价榜** | ChatGPT、Claude、Gemini 订阅、成品号与兑换码比价（收录 16 家） | [`卡网完整榜`](./CARDS.md) |
 | **API 中转站全量榜** | 开发者接口调用、真假官转鉴定、实时可用率测速与倍率换算（收录 24 家） | [`中转站全量榜`](./API_RELAY.md) |
 | **多智能体打分体系** | 中立风控 (35%) + 数据功能 (35%) + 体验直连 (30%) 算法判据细则 | [`打分标准细则`](./SCORING.md) |
-| **AI 采办秘书 Skill** | 全网发卡现货秒级核验、残次号硬核排雷、分层秘书简报与 CLI 工具链 | [`智能体技能规约`](./.agents/skills/card-and-relay-tracker/SKILL.md) |
 | **免责声明与使用条款** | 法律级非商业声明、资金安全严正警示及快速无条件移除流程 | [`免责声明条款`](./DISCLAIMER.md) |
 
 ---
@@ -104,106 +101,6 @@
 3. **无条件移除流程**：站点运营方如不希望被收录，请按照 [免责声明第八条](./DISCLAIMER.md#八异议沟通与侵权移除流程-notice-and-takedown) 提交 Issue，我们在核实后将尽快（通常 7 个工作日内）无条件彻底移除。
 
 [查阅完整法律声明与使用条款](./DISCLAIMER.md)
-
----
-
-## AI 资产采办与避坑秘书 (card-and-relay-tracker)
-
-本项目内置开箱即用的 AI 智能体专属采办秘书规约与轻量化 Python 标准库工具，实现了“**全网发卡现货秒级核验 + 残次高危号硬核排雷 + 高级秘书简报交付**”的完整工程闭环。
-
----
-
-### 1. 30 秒快速接入 (丢给 AI 直接安装)
-
-复制以下提示词直接发送给你的 AI 助手（Codex、Claude Code、Gemini、Cursor 等），AI 将自动拉取并装载本技能：
-
-> 📋 **一键装载提示词（点击直接复制）：**
-
-```text
-请帮我从 GitHub 安装并启用 AI 资产采办与避坑秘书 (card-and-relay-tracker)：
-1. 仓库地址：https://github.com/waw666waw666/awesome-ai-relay-and-cards.git
-2. 提取仓库中的 `.agents/skills/card-and-relay-tracker` 目录及其配套的 `scripts/` 工具，完整安装到我当前项目或全局的 Agent 技能目录（如 `~/.agents/skills/card-and-relay-tracker`）；
-3. 安装完成后读取其 `SKILL.md`；后续当我询问任何 AI 账号（Gemini 学生认证、ChatGPT、Claude、Cursor 等）现货、比价、中转站推荐时，像高级秘书一样直接调用该技能核验排雷并输出高信号简报！
-```
-
-<details>
-<summary><b>🛠️ 终端手动安装（可选）：</b></summary>
-
-```bash
-# 方式 A：克隆并复制到全局 Agent 技能目录
-git clone https://github.com/waw666waw666/awesome-ai-relay-and-cards.git
-cp -r awesome-ai-relay-and-cards/.agents/skills/card-and-relay-tracker ~/.agents/skills/
-
-# 方式 B：在当前项目中直接开箱使用（项目根目录下已预置）
-cd awesome-ai-relay-and-cards
-```
-</details>
-
----
-
-### 2. 双阶段穿透架构 (Architecture)
-
-为彻底解决聚合站“虚标底价引流”与“过期货架缓存”顽疾，技能严格执行两阶段检索管线：
-
-```
-[用户指令 / 意图识别]
-           │
-           ▼
-┌────────────────────────────────────────┐
-│  第一阶段：全量聚合初筛 (Discovery)     │  ◄── targets.json (40 站点全量资产库)
-│  - 广度匹配候选店铺落地页              │  ◄── GATE-01: 负向黑名单一票否决代认证
-└──────────────────┬─────────────────────┘
-                   │ 提取候选店铺落地页 URL
-                   ▼
-┌────────────────────────────────────────┐
-│  第二阶段：终端实时验真 (Penetration)   │  ◄── verify_terminal.py
-│  - 全向 WAF 挑战盾识别与旁路复核       │
-│  - DOM 邻近特征窗口防串价匹配          │
-│  - 复合时长月折合单价自动换算          │
-└──────────────────┬─────────────────────┘
-                   │ 结构化真价数据 (real_price, in_stock > 0, direct_url)
-                   ▼
-┌────────────────────────────────────────┐
-│  第三阶段：高信号决策卡片交付 (Output) │  ◄── 强制交付可点击购买直链与折合单价
-└────────────────────────────────────────┘
-```
-
----
-
-### 3. 7 维机读判定门禁 (Decision Gates)
-
-技能在后台执行时，强制调用 [`anti_traps.md`](./.agents/skills/card-and-relay-tracker/references/anti_traps.md) 规则矩阵实施自动化拦截：
-
-| 门禁编号 | 检验维度 | 拦截级别 | 判定规则与处置动作 |
-| :---: | :--- | :---: | :--- |
-| **GATE-01** | **规格纯度** | `FAIL (一票否决)` | 成品诉求下一票否决“代认证/代充/自备号/包过”，严禁混淆交付。 |
-| **GATE-02** | **结算真价** | `FAIL (一票否决)` | 废弃聚合站标价，强制采信落地页实时实付价，彻底消除起步价刺客。 |
-| **GATE-03** | **有效库存** | `FAIL (一票否决)` | 排查幽灵秒发，库存为 0 或排队预售直接剔除，仅保留有效现货。 |
-| **GATE-04** | **交付安全** | `WARN (警示降权)` | 自建企业邮标注高危，无独立邮箱剔除，加粗展示质保条款。 |
-| **GATE-05** | **模型纯度** | `FAIL (一票否决)` | MODELOC / Veridrop 纯度低于 80 分或存在模型降级直接阻断。 |
-| **GATE-06** | **倍率透明** | `REQUIRED (强制折算)` | 穿透宣传充赠，强制折算为每百万 Token 最终实付人民币价格。 |
-| **GATE-07** | **上下文截断** | `WARN (警示标记)` | 识别长文本静默截断与逆向接口，标注文档实际处理上限。 |
-
----
-
-### 4. 独立自动化 CLI 工具链 (CLI Toolchain)
-
-无需启动 AI 智能体，也可在终端直接运行配套脚本：
-
-```bash
-# 1. AI 账号全网发卡现货聚合检索与门禁过滤（实时覆盖 Gemini、ChatGPT、Claude、Cursor 等 50+ 品类）
-python scripts/query_cards.py "gemini"
-python scripts/query_cards.py "chatgpt" --limit 5
-
-# 2. 单点发卡网落地页秒级真价穿透测试（支持防爬盾感知、防串价与标签强过滤）
-python scripts/verify_terminal.py "https://buyai.dev/" --sku "Muse" --require-tags "成品" --exclude-tags "代认证,自备" --json
-
-# 3. 全库 40+ 外链并发健康探测与跨域换绑雷达
-python scripts/check_links.py --workers 10
-
-# 如需配合代理分流检测
-python scripts/check_links.py --proxy "http://127.0.0.1:7897"
-```
 
 ---
 
