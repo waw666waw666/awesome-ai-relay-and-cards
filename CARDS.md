@@ -34,17 +34,17 @@
 | :---: | :---: | :--- | :--- | :--- |
 | **9** | **76.0** | **卡网大全** | [https://cardnav.xyz/](https://cardnav.xyz/) | 店铺收录全面，部分外部链接含推广参数，点击外链请核验实价。 |
 | **10** | **74.2** | **Aibijia** | [https://www.aibijia.org/](https://www.aibijia.org/) | 开源轻量，支持按模型和预算滑块筛选，店铺量较基础。 |
-| **11** | **74.2** | **Recch** | [https://www.recch.com/](https://www.recch.com/) | 基础现货比价列表，带外链跳出风险提示。 |
-| **12** | **71.5** | **AIprobe** | [https://aiprobe.yumeapi.cn/](https://aiprobe.yumeapi.cn/) | 开源探针框架，主要用于抓取发卡与接口基础元数据。 |
-| **13** | **69.5** | **AIGOOD 雷达** | [https://aigood.chat/price-radar](https://aigood.chat/price-radar) | 综合工具箱下属比价页，更新频次稍缓。 |
-| **14** | **69.5** | **链动小铺收录** | [https://ldxp.qizhang.org/](https://ldxp.qizhang.org/) | 个人整理的 Telegram 与发卡店铺静态链接，供备用检索。 |
-| **15** | **67.5** | **白嫖卡网比价** | [https://baipiao.org/price/](https://baipiao.org/price/) | 社区比价分流板块，部分国内直连网络偶受阻需代理。 |
-| **16** | **58.8** | **GrokCode** | [https://www.grokcode.cn/](https://www.grokcode.cn/) | 卡网与中转倍率雷达，主站证书直连偶受阻。 |
+| **11** | **71.5** | **AIprobe** | [https://aiprobe.yumeapi.cn/](https://aiprobe.yumeapi.cn/) | 开源探针框架，主要用于抓取发卡与接口基础元数据。 |
+| **12** | **69.5** | **AIGOOD 雷达** | [https://aigood.chat/price-radar](https://aigood.chat/price-radar) | 综合工具箱下属比价页，更新频次稍缓。 |
+| **13** | **69.5** | **链动小铺收录** | [https://ldxp.qizhang.org/](https://ldxp.qizhang.org/) | 个人整理的 Telegram 与发卡店铺静态链接，供备用检索。 |
+| **14** | **67.5** | **白嫖卡网比价** | [https://baipiao.org/price/](https://baipiao.org/price/) | 社区比价分流板块，部分国内直连网络偶受阻需代理。 |
+| **15** | **58.8** | **GrokCode** | [https://www.grokcode.cn/](https://www.grokcode.cn/) | 卡网与中转倍率雷达，主站证书直连偶受阻。 |
 
 ---
 
 ## 说明与别名合并
 
+- **失效与移除记录**：Recch (`recch.com`) 于 2026-10 巡检中检测到服务器停止响应（连接重置/SSL EOF 中断），已从有效推荐榜单中移除。
 - **别名合并项**：`priceai.io` 合并至 `priceai.cc`；`airadar.ink` 合并至 `airadar.vip`；`aiprobe.top` 合并至 `aiprobe.yumeapi.cn`。
 - **评测标准**：各维度打分判据请参阅 [打分标准细则](./SCORING.md)。
 - **风险提示**：第三方发卡网属于第三方自建服务，请务必小额按需购买，切勿沉淀大额资金，详见 [免责声明与使用条款](./DISCLAIMER.md)。

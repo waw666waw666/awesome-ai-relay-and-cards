@@ -2,7 +2,7 @@
 
 [English](./README_EN.md) | [简体中文](./README.md)
 
-> An independent benchmark covering **16 AI subscription aggregators** and **24 developer API relay aggregators & evaluation platforms** with zero commercial bias.
+> An independent benchmark covering **15 AI subscription aggregators** and **24 developer API relay aggregators & evaluation platforms** with zero commercial bias.
 
 ---
 
@@ -10,7 +10,7 @@
 
 | Module | Core Scope & Evaluation Focus | Document Link |
 | :--- | :--- | :---: |
-| **Card & Account Aggregators** | ChatGPT, Claude, Gemini subscriptions, finished accounts & redemption codes (16 platforms) | [`CARDS.md`](./CARDS.md) |
+| **Card & Account Aggregators** | ChatGPT, Claude, Gemini subscriptions, finished accounts & redemption codes (15 platforms) | [`CARDS.md`](./CARDS.md) |
 | **API Relay Aggregators & Benchmarks** | Developer API endpoints, authenticity audits, latency probes & multiplier normalization (24 platforms) | [`API_RELAY.md`](./API_RELAY.md) |
 | **Multi-Agent Scoring System** | Neutrality & Risk (35%) + Data & Features (35%) + UX & Direct Connectivity (30%) | [`SCORING.md`](./SCORING.md) |
 | **Legal Disclaimer & Terms** | Non-commercial disclaimer, financial risk warnings & unconditional takedown procedure | [`DISCLAIMER.md`](./DISCLAIMER.md) |
