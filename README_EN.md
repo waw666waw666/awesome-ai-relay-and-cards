@@ -2,7 +2,7 @@
 
 [English](./README_EN.md) | [简体中文](./README.md)
 
-> An independent benchmark covering **16 AI subscription aggregators** and **24 developer API relays** with zero commercial bias.
+> An independent benchmark covering **16 AI subscription aggregators** and **24 developer API relay aggregators & evaluation platforms** with zero commercial bias.
 
 ---
 
@@ -11,7 +11,7 @@
 | Module | Core Scope & Evaluation Focus | Document Link |
 | :--- | :--- | :---: |
 | **Card & Account Aggregators** | ChatGPT, Claude, Gemini subscriptions, finished accounts & redemption codes (16 platforms) | [`CARDS.md`](./CARDS.md) |
-| **API Relay Benchmarks** | Developer API endpoints, authenticity audits, latency probes & multiplier normalization (24 platforms) | [`API_RELAY.md`](./API_RELAY.md) |
+| **API Relay Aggregators & Benchmarks** | Developer API endpoints, authenticity audits, latency probes & multiplier normalization (24 platforms) | [`API_RELAY.md`](./API_RELAY.md) |
 | **Multi-Agent Scoring System** | Neutrality & Risk (35%) + Data & Features (35%) + UX & Direct Connectivity (30%) | [`SCORING.md`](./SCORING.md) |
 | **Legal Disclaimer & Terms** | Non-commercial disclaimer, financial risk warnings & unconditional takedown procedure | [`DISCLAIMER.md`](./DISCLAIMER.md) |
 
@@ -41,17 +41,34 @@
 
 ---
 
-### 2. API Relay Directory & Authenticity Benchmarks
+### 2. API Relay Aggregators & Authenticity Benchmarks
 
-#### Tier 0 (Composite Score ≥ 85.0)
+#### Tier 0 (Composite Score ≥ 87.0)
 
 | Rank | Score | Platform | Official URL | Dimension Scores (Neutral / Data / UX) | Core Architecture & Features |
 | :---: | :---: | :--- | :--- | :---: | :--- |
-| **1** | **90.0** | **RouterHubs** | [https://routerhubs.com/](https://routerhubs.com/) | 80 / 100 / 90 | Zero-commission, zero-proxy, independent availability, latency, and price snapshots across 24 relays. |
-| **2** | **87.2** | **TokenAPI Scan** | [https://tokenscanai.com/](https://tokenscanai.com/) | 85 / 100 / 75 | Tracks 391 relay providers, red/black lists, targeted probes against counterfeit official routes. |
-| **3** | **87.0** | **EggStriker** | [https://www.eggstriker.com/ai-api](https://www.eggstriker.com/ai-api) | 80 / 100 / 80 | Full-spectrum matrix across 144 relays, direct speed probes, model pricing & multiplier conversion. |
-| **4** | **86.5** | **APITokenNav** | [https://apitokennav.com/](https://apitokennav.com/) | 70 / 100 / 90 | Indexes 105 relays, filtered by developer IDE client (Cursor/Codex) and minimum deposit thresholds. |
-| **5** | **85.0** | **API Ranking** | [https://apiranking.com/](https://apiranking.com/) | 70 / 100 / 85 | Tracks domain migrations and mirror updates, multi-model price and throughput comparisons. |
+| **1** | **91.5** | **GetCheapAI** | [https://www.getcheapai.com/zh-cn](https://www.getcheapai.com/zh-cn) | 85 / 95 / 95 | Live token pricing across 60+ relays and 398+ models, normalized per 1M input/output tokens with official discount ratios and IDE client tools zone. |
+| **2** | **88.5** | **API Ranking** | [https://apiranking.com/](https://apiranking.com/) | 80 / 95 / 90 | In-depth model response authenticity and degradation testing, billing audit records, and dynamic domain migration tracker. |
+| **3** | **87.5** | **EggStriker** | [https://www.eggstriker.com/ai-api](https://www.eggstriker.com/ai-api) | 80 / 95 / 85 | Comprehensive directory indexing 144 relay providers, filtered by use case, budget tier, and direct/proxy network status. |
+
+#### Tier 1 (Composite Score 76.0 ~ 86.9)
+
+| Rank | Score | Platform | Official URL | Dimension Scores (Neutral / Data / UX) | Core Architecture & Features |
+| :---: | :---: | :--- | :--- | :---: | :--- |
+| **4** | **86.5** | **APITokenNav** | [https://apitokennav.com/](https://apitokennav.com/) | 75 / 95 / 90 | Indexes 105 relay endpoints, filtered by supported models, developer IDE client (Cursor/Codex), and minimum deposit. |
+| **5** | **84.8** | **zznav** | [https://zznav.site/](https://zznav.site/) | 65 / 100 / 90 | Cross-platform benchmarking and risk directory, fast domestic connectivity. |
+| **6** | **84.8** | **Hvoy AI (禾维 AI)** | [https://www.hvoyai.com/](https://www.hvoyai.com/) | 65 / 100 / 90 | Online API inspector probing Claude/GPT model authenticity and response characteristics. |
+| **7** | **84.0** | **MODELOC** | [https://modeloc.com/relays](https://modeloc.com/relays) | 75 / 90 / 90 | Consistency and dilution testing for LLM endpoints, directory and community ratings. |
+| **8** | **83.5** | **Veridrop** | [https://veridrop.org/](https://veridrop.org/) | 80 / 90 / 80 | Industry benchmark testing model purity via verified provider API keys. |
+| **9** | **83.5** | **chatgpt.top** | [https://chatgpt.top/](https://chatgpt.top/) | 80 / 90 / 80 | Clean directory for Claude Code / Cursor / Codex with zero affiliate parameters. |
+| **10** | **83.0** | **awesome-ai-api-proxy** | [https://howardpen9.github.io/awesome-ai-api-proxy/](https://howardpen9.github.io/awesome-ai-api-proxy/) | 85 / 75 / 90 | Open-source GitHub repository serving clean price observation points for AI agents. |
+| **11** | **81.8** | **Help AIO** | [https://www.helpaio.com/](https://www.helpaio.com/) | 75 / 90 / 80 | Self-funded real-query 7x24 probing with publicly documented evaluation criteria. |
+| **12** | **81.8** | **Baipiao Relay** | [https://baipiao.org/relay/](https://baipiao.org/relay/) | 65 / 90 / 85 | Real request testing across 14+ providers logging actual deductions and success rates. |
+| **13** | **81.5** | **RouterHubs** | [https://routerhubs.com/](https://routerhubs.com/) | 80 / 75 / 90 | Clean ad-free directory of 24 relay platforms, supporting lightweight filtering by model family and minimum deposit. |
+| **14** | **81.2** | **OkkMax** | [https://www.okkmax.com/](https://www.okkmax.com/) | 60 / 90 / 85 | Model purity, context window depth tests, and intelligence leaderboard. |
+| **15** | **80.5** | **TokenAPI Scan** | [https://tokenscanai.com/](https://tokenscanai.com/) | 80 / 75 / 85 | Focuses on security and network connectivity monitoring, protocol feature tests, and risk advisory signals. |
+
+[See full 24 relay evaluation platforms in API_RELAY.md](./API_RELAY.md)
 
 ---
 
