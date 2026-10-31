@@ -2,7 +2,7 @@
 
 [English](./README_EN.md) | [简体中文](./README.md)
 
-> An independent benchmark covering **15 AI subscription aggregators** and **24 developer API relay aggregators & evaluation platforms** with zero commercial bias.
+> An independent benchmark covering **16 AI subscription aggregators** and **24 developer API relay aggregators & evaluation platforms** with zero commercial bias.
 
 ---
 
@@ -10,7 +10,7 @@
 
 | Module | Core Scope & Evaluation Focus | Document Link |
 | :--- | :--- | :---: |
-| **Card & Account Aggregators** | ChatGPT, Claude, Gemini subscriptions, finished accounts & redemption codes (15 platforms) | [`CARDS.md`](./CARDS.md) |
+| **Card & Account Aggregators** | ChatGPT, Claude, Gemini subscriptions, finished accounts & redemption codes (16 platforms) | [`CARDS.md`](./CARDS.md) |
 | **API Relay Aggregators & Benchmarks** | Developer API endpoints, authenticity audits, latency probes & multiplier normalization (24 platforms) | [`API_RELAY.md`](./API_RELAY.md) |
 | **Multi-Agent Scoring System** | Neutrality & Risk (35%) + Data & Features (35%) + UX & Direct Connectivity (30%) | [`SCORING.md`](./SCORING.md) |
 | **Legal Disclaimer & Terms** | Non-commercial disclaimer, financial risk warnings & unconditional takedown procedure | [`DISCLAIMER.md`](./DISCLAIMER.md) |
@@ -36,8 +36,9 @@
 | **4** | **84.2** | **Shuita (水獭比价)** | [https://shuita.xyz/](https://shuita.xyz/) | 65 / 90 / 100 | Live aggregation across 126 merchant stores, in-stock prioritization, rapid response. |
 | **5** | **82.0** | **AIFeeRadar** | [https://aifeeradar.com/](https://aifeeradar.com/) | 70 / 100 / 75 | Multi-dimensional matrix covering official subscriptions, regional tiers, and merchant quotes. |
 | **6** | **81.8** | **Relay Radar** | [https://aicodex.chat/radar](https://aicodex.chat/radar) | 65 / 100 / 80 | Independent sampling, explicit in-stock floor price tags, channel counts and risk ratings. |
-| **7** | **80.2** | **AIradar** | [https://airadar.vip/](https://airadar.vip/) | 70 / 90 / 80 | Weekly subscription market reports, price drop alerts, card-based interaction. |
-| **8** | **80.2** | **Biwu AI (比武 AI)** | [https://biwu.ai/](https://biwu.ai/) | 70 / 90 / 80 | Tracks 280+ stores, real-time conversion across 42 official regional pricing currencies. |
+| **7** | **81.6** | **Zhitu Shijia (知途·拾价)** | [https://price.yufu.pub/](https://price.yufu.pub/) | 75 / 90 / 80 | Live multi-merchant stock aggregator with quote timestamps, fast direct connectivity, categorizing accounts, memberships, and auth services. |
+| **8** | **80.2** | **AIradar** | [https://airadar.vip/](https://airadar.vip/) | 70 / 90 / 80 | Weekly subscription market reports, price drop alerts, card-based interaction. |
+| **9** | **80.2** | **Biwu AI (比武 AI)** | [https://biwu.ai/](https://biwu.ai/) | 70 / 90 / 80 | Tracks 280+ stores, real-time conversion across 42 official regional pricing currencies. |
 
 ---
 
