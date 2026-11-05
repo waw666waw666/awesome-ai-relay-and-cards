@@ -27,13 +27,13 @@
 | :---: | :---: | :--- | :--- | :---: | :--- |
 | **1** | **93.0** | **PriceAI** | [https://priceai.cc/](https://priceai.cc/) | 80 / 100 / 100 | Open architecture, live stock curves, comprehensive price trends, clean category navigation. |
 | **2** | **93.0** | **9AIB (就爱比)** | [https://9aib.com/](https://9aib.com/) | 80 / 100 / 100 | Monitors 350+ audited merchant stores, active price-drop radar, comprehensive model coverage. |
+| **3** | **89.5** | **Shuita (水獭比价)** | [https://shuita.xyz/](https://shuita.xyz/) | 80 / 95 / 100 | Live aggregation across 130+ stores; physically isolated sponsored slots, transparent affiliate disclosures & audit trail, live probe latency metrics & regional FX normalization. |
 
 #### Tier 1 (Composite Score 78.0 ~ 87.9)
 
 | Rank | Score | Platform | Official URL | Dimension Scores (Neutral / Data / UX) | Core Architecture & Features |
 | :---: | :---: | :--- | :--- | :---: | :--- |
-| **3** | **87.2** | **OpenPrice** | [https://www.openprice.cc/](https://www.openprice.cc/) | 85 / 100 / 75 | Open-source comparison, 280+ merchant channels, real-time regional FX normalization. |
-| **4** | **84.2** | **Shuita (水獭比价)** | [https://shuita.xyz/](https://shuita.xyz/) | 65 / 90 / 100 | Live aggregation across 126 merchant stores, in-stock prioritization, rapid response. |
+| **4** | **87.2** | **OpenPrice** | [https://www.openprice.cc/](https://www.openprice.cc/) | 85 / 100 / 75 | Open-source comparison, 280+ merchant channels, real-time regional FX normalization. |
 | **5** | **82.0** | **AIFeeRadar** | [https://aifeeradar.com/](https://aifeeradar.com/) | 70 / 100 / 75 | Multi-dimensional matrix covering official subscriptions, regional tiers, and merchant quotes. |
 | **6** | **81.8** | **Relay Radar** | [https://aicodex.chat/radar](https://aicodex.chat/radar) | 65 / 100 / 80 | Independent sampling, explicit in-stock floor price tags, channel counts and risk ratings. |
 | **7** | **81.6** | **Zhitu Shijia (知途·拾价)** | [https://price.yufu.pub/](https://price.yufu.pub/) | 75 / 90 / 80 | Live multi-merchant stock aggregator with quote timestamps, fast direct connectivity, categorizing accounts, memberships, and auth services. |
