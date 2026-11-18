@@ -51,6 +51,14 @@
 
 ---
 
+## 待评测提交（未评分）
+
+| 平台名称 | 官网链接 | 简评 |
+| :--- | :--- | :--- |
+| **Folkbench** | [https://folkbench.com/](https://folkbench.com/?utm_source=github&utm_medium=awesome&utm_campaign=awesome-ai-relay-and-cards) | AI API 中转站榜单与实时检测：按 Claude Code / Codex / GPT / Gemini 场景选线路并给出客户端配置，可用自己的 Key 在站内实时检测。排序遵循站点规则（含合作档位和运营加权），部分数据为展示样本。 |
+
+---
+
 ## 说明与别名合并
 
 - **别名合并**：`veridrop.app` 与 `apihonest.com` 合并至 `veridrop.org`；`www.hovy.ai` 合并至 `www.hvoyai.com`；`grokcode.cn/api-transit` 合并至 `grokcode.cn`。
