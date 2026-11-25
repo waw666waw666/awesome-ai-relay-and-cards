@@ -2,7 +2,7 @@
 
 [English](./README_EN.md) | [简体中文](./README.md)
 
-> An independent benchmark covering **16 AI subscription aggregators** and **24 developer API relay aggregators & evaluation platforms** with zero commercial bias.
+> An independent benchmark covering **16 AI subscription aggregators** and **25 developer API relay aggregators & evaluation platforms** with zero commercial bias.
 
 ---
 
@@ -11,7 +11,7 @@
 | Module | Core Scope & Evaluation Focus | Document Link |
 | :--- | :--- | :---: |
 | **Card & Account Aggregators** | ChatGPT, Claude, Gemini subscriptions, finished accounts & redemption codes (16 platforms) | [`CARDS.md`](./CARDS.md) |
-| **API Relay Aggregators & Benchmarks** | Developer API endpoints, authenticity audits, latency probes & multiplier normalization (24 platforms) | [`API_RELAY.md`](./API_RELAY.md) |
+| **API Relay Aggregators & Benchmarks** | Developer API endpoints, authenticity audits, latency probes & multiplier normalization (25 platforms) | [`API_RELAY.md`](./API_RELAY.md) |
 | **Multi-Agent Scoring System** | Neutrality & Risk (35%) + Data & Features (35%) + UX & Direct Connectivity (30%) | [`SCORING.md`](./SCORING.md) |
 | **Legal Disclaimer & Terms** | Non-commercial disclaimer, financial risk warnings & unconditional takedown procedure | [`DISCLAIMER.md`](./DISCLAIMER.md) |
 
@@ -63,13 +63,14 @@
 | **8** | **83.5** | **Veridrop** | [https://veridrop.org/](https://veridrop.org/) | 80 / 90 / 80 | Industry benchmark testing model purity via verified provider API keys. |
 | **9** | **83.5** | **chatgpt.top** | [https://chatgpt.top/](https://chatgpt.top/) | 80 / 90 / 80 | Clean directory for Claude Code / Cursor / Codex with zero affiliate parameters. |
 | **10** | **83.0** | **awesome-ai-api-proxy** | [https://howardpen9.github.io/awesome-ai-api-proxy/](https://howardpen9.github.io/awesome-ai-api-proxy/) | 85 / 75 / 90 | Open-source GitHub repository serving clean price observation points for AI agents. |
-| **11** | **81.8** | **Help AIO** | [https://www.helpaio.com/](https://www.helpaio.com/) | 75 / 90 / 80 | Self-funded real-query 7x24 probing with publicly documented evaluation criteria. |
-| **12** | **81.8** | **Baipiao Relay** | [https://baipiao.org/relay/](https://baipiao.org/relay/) | 65 / 90 / 85 | Real request testing across 14+ providers logging actual deductions and success rates. |
-| **13** | **81.5** | **RouterHubs** | [https://routerhubs.com/](https://routerhubs.com/) | 80 / 75 / 90 | Clean ad-free directory of 24 relay platforms, supporting lightweight filtering by model family and minimum deposit. |
-| **14** | **81.2** | **OkkMax** | [https://www.okkmax.com/](https://www.okkmax.com/) | 60 / 90 / 85 | Model purity, context window depth tests, and intelligence leaderboard. |
-| **15** | **80.5** | **TokenAPI Scan** | [https://tokenscanai.com/](https://tokenscanai.com/) | 80 / 75 / 85 | Focuses on security and network connectivity monitoring, protocol feature tests, and risk advisory signals. |
+| **11** | **83.0** | **Folkbench** | [https://folkbench.com/](https://folkbench.com/) | 65 / 95 / 90 | Tracks 42 relays and 2,900+ routes with 24h uptime/TTFT, degradation monitoring (model fingerprint & probe consistency), and BYOK live API quality checks; note: site ranking includes partner weighting and partial sample data. |
+| **12** | **81.8** | **Help AIO** | [https://www.helpaio.com/](https://www.helpaio.com/) | 75 / 90 / 80 | Self-funded real-query 7x24 probing with publicly documented evaluation criteria. |
+| **13** | **81.8** | **Baipiao Relay** | [https://baipiao.org/relay/](https://baipiao.org/relay/) | 65 / 90 / 85 | Real request testing across 14+ providers logging actual deductions and success rates. |
+| **14** | **81.5** | **RouterHubs** | [https://routerhubs.com/](https://routerhubs.com/) | 80 / 75 / 90 | Clean ad-free directory of 24 relay platforms, supporting lightweight filtering by model family and minimum deposit. |
+| **15** | **81.2** | **OkkMax** | [https://www.okkmax.com/](https://www.okkmax.com/) | 60 / 90 / 85 | Model purity, context window depth tests, and intelligence leaderboard. |
+| **16** | **80.5** | **TokenAPI Scan** | [https://tokenscanai.com/](https://tokenscanai.com/) | 80 / 75 / 85 | Focuses on security and network connectivity monitoring, protocol feature tests, and risk advisory signals. |
 
-[See full 24 relay evaluation platforms in API_RELAY.md](./API_RELAY.md)
+[See full 25 relay evaluation platforms in API_RELAY.md](./API_RELAY.md)
 
 ---
 
